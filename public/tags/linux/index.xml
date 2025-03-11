@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Linux on Loknath&#39;s Log</title>
+    <link>http://localhost:1313/tags/linux/</link>
+    <description>Recent content in Linux on Loknath&#39;s Log</description>
+    <image>
+      <title>Loknath&#39;s Log</title>
+      <url>http://localhost:1313/images/cover.png</url>
+      <link>http://localhost:1313/images/cover.png</link>
+    </image>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 10 May 2023 11:30:03 +0600</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Let&#39;s learn: logrotate!</title>
+      <link>http://localhost:1313/posts/all_about_logrotate/</link>
+      <pubDate>Wed, 10 May 2023 11:30:03 +0600</pubDate>
+      <guid>http://localhost:1313/posts/all_about_logrotate/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Logrotate&lt;/strong&gt; is a system utility that manages the automatic rotation and compression of log files.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;logrotate --version
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;man logrotate
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Configuration can be found generally in two places:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;/etc/logrotate.conf&lt;/code&gt;: contain some default settings, sets up rotation for a few logs that are not owned by any system packages. Also uses an &lt;code&gt;include&lt;/code&gt; statement to pull in configuration from any file from the logrotate directory.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/etc/logrotate.d&lt;/code&gt;: files for packages.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;By default, &lt;code&gt;logrotate.conf&lt;/code&gt;will configure weekly log rotations, with log files owned by the root user and the &lt;strong&gt;syslog&lt;/strong&gt; group., with four log files being retained at a time (&lt;em&gt;rotate 4&lt;/em&gt;) and new empty log files being created after the current one is rotated (&lt;code&gt;create&lt;/code&gt;).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Let&#39;s learn: journalctl!</title>
+      <link>http://localhost:1313/posts/all-about-journalctl/</link>
+      <pubDate>Sun, 30 Apr 2023 11:30:03 +0600</pubDate>
+      <guid>http://localhost:1313/posts/all-about-journalctl/</guid>
+      <description>&lt;p&gt;&lt;code&gt;jounralctl&lt;/code&gt; is the command line tool that let us interact with the journal logs. Default location of &lt;code&gt;journald&lt;/code&gt; logs is &lt;code&gt;/var/log/journal&lt;/code&gt; directory.&lt;/p&gt;
+&lt;p&gt;Type &lt;code&gt;journalctl&lt;/code&gt; in the terminal, it will show the journal logs in chronological order.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;journalctl --no-pager&lt;/code&gt; will display entire logs directly on the screen.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;journalctl -n 25&lt;/code&gt;: will display most recent 25 lines of the logs.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;journalctl -f&lt;/code&gt;:  view logs in real time.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;jouralctl --utc&lt;/code&gt;: display  logs in UTC time.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;journalctl -k&lt;/code&gt;: display only  kernel logs.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;all-journal-logs&#34;&gt;All Journal logs&lt;/h4&gt;
+&lt;p&gt;Use &lt;code&gt;sudo&lt;/code&gt; to see all journal logs.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Let&#39;s learn: systemctl!</title>
+      <link>http://localhost:1313/posts/all_about_systemctl/</link>
+      <pubDate>Mon, 20 Mar 2023 11:30:03 +0600</pubDate>
+      <guid>http://localhost:1313/posts/all_about_systemctl/</guid>
+      <description>&lt;h1 id=&#34;service-management&#34;&gt;Service management&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl start app.service
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl stop app.service
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl restart app.service
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl reload app.service
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl reload-or-restart app.service
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; app.service
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl disable app.service
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;checking-status&#34;&gt;Checking status&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl status app.service
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl is-active app.service
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl is-enabled app.service
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl is-failed app.service
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;system-state-overview&#34;&gt;System state overview&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# see a list of active units&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl list-units
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl &lt;span class=&#34;c1&#34;&gt;# returns same as above&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl list-units --all
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl list-units --all --state&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;inactive
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl list-units --type&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;service
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;To see every available units in the system paths (&lt;em&gt;including those that &lt;code&gt;systemd&lt;/code&gt; has not attempted to load&lt;/em&gt;):&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Let&#39;s learn: Vim/NeoVim!</title>
+      <link>http://localhost:1313/posts/all_about_vim/</link>
+      <pubDate>Wed, 08 Feb 2023 11:30:03 +0600</pubDate>
+      <guid>http://localhost:1313/posts/all_about_vim/</guid>
+      <description>&lt;p&gt;Syntax: &lt;code&gt;vim filename&lt;/code&gt;.&lt;/p&gt;
+&lt;h1 id=&#34;movement&#34;&gt;Movement&lt;/h1&gt;
+&lt;h4 id=&#34;navigating&#34;&gt;Navigating&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;h&lt;/code&gt; /&lt;code&gt;j&lt;/code&gt;/&lt;code&gt;k&lt;/code&gt;/&lt;code&gt;l&lt;/code&gt; :&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;C-U&lt;/code&gt;/&lt;code&gt;C-D&lt;/code&gt; : half-page up/down.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;C-B&lt;/code&gt;/&lt;code&gt;C-F&lt;/code&gt; : page up/down.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;H&lt;/code&gt; : move to top of the screen.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;M&lt;/code&gt; : move to middle of the screen.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;L&lt;/code&gt; : move to bottom of the screen.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;words&#34;&gt;Words&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;b&lt;/code&gt;/&lt;code&gt;w&lt;/code&gt; : previous/next word.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;ge&lt;/code&gt;/&lt;code&gt;e&lt;/code&gt; : previous/next end of word.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;gj&lt;/code&gt; : move cursor down (&lt;em&gt;multi-line text&lt;/em&gt;).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;gk&lt;/code&gt; : move cursor up (&lt;em&gt;multi-line text&lt;/em&gt;).&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;line&#34;&gt;Line&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;$&lt;/code&gt; : to the end of the line (&lt;em&gt;including last character&lt;/em&gt;).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Let&#39;s learn: Wildcards!</title>
+      <link>http://localhost:1313/posts/all_about_wildcards/</link>
+      <pubDate>Wed, 18 Jan 2023 11:30:03 +0600</pubDate>
+      <guid>http://localhost:1313/posts/all_about_wildcards/</guid>
+      <description>&lt;p&gt;Wildcards (&lt;em&gt;also known as globbing&lt;/em&gt;) allows us to select filenames based on patterns of characters.&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Wildcard&lt;/th&gt;
+          &lt;th&gt;Meaning&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;*&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;matches any character&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;?&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;matches any single character&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;[characters]&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;matches any &lt;em&gt;character&lt;/em&gt; that is a member of the &lt;em&gt;set characters&lt;/em&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;[!characters]&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;matches any &lt;em&gt;character&lt;/em&gt; that is &lt;!-- raw HTML omitted --&gt;not&lt;!-- raw HTML omitted --&gt; a member of the &lt;em&gt;set characters&lt;/em&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;[[:class:]]&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;matches any &lt;em&gt;character&lt;/em&gt; that is a member of the specified &lt;em&gt;class&lt;/em&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Commonly used &lt;em&gt;character classes&lt;/em&gt;:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Let&#39;s learn: grep!</title>
+      <link>http://localhost:1313/posts/all-about-grep/</link>
+      <pubDate>Tue, 13 Dec 2022 11:30:03 +0600</pubDate>
+      <guid>http://localhost:1313/posts/all-about-grep/</guid>
+      <description>&lt;p&gt;&lt;code&gt;grep&lt;/code&gt;: Global Regular Expression print.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;grep&lt;/code&gt; is a powerful program used to find text patterns within files. It uses &lt;strong&gt;regular expressions&lt;/strong&gt; (&lt;em&gt;shortly regex&lt;/em&gt;) to match the pattern.&lt;/p&gt;
+&lt;p&gt;When &lt;code&gt;grep&lt;/code&gt; encounters a &lt;em&gt;pattern&lt;/em&gt; in the file, it prints out the lines containing it. If no file is given, it will search recursively search the given pattern in the files in current directory.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;grep pattern &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;file...&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;grep &amp;lt;search-pattern&amp;gt; file.txt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;To show the line number in the output, use &lt;code&gt;-n&lt;/code&gt; option:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;grep -n &amp;lt;search-pattern&amp;gt; file.txt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;grep&lt;/code&gt; is case-sensitive.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Let&#39;s learn: less!</title>
+      <link>http://localhost:1313/posts/all_about_less/</link>
+      <pubDate>Sun, 13 Nov 2022 11:30:03 +0600</pubDate>
+      <guid>http://localhost:1313/posts/all_about_less/</guid>
+      <description>&lt;p&gt;The &lt;code&gt;less&lt;/code&gt; command is a program to view text files.&lt;/p&gt;
+&lt;p&gt;Example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;less filename
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;less /etc/passwd
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Some action commands for &lt;code&gt;less&lt;/code&gt;:&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Command&lt;/th&gt;
+          &lt;th&gt;Action&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;Page Up&lt;/code&gt; or &lt;code&gt;b&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Scroll back one page&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;Page Down&lt;/code&gt; or &lt;code&gt;space&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Scroll forward one page&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;Up Arrow&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Scroll up one line&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;Down Arrow&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Scroll down one line&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;G&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Move to the end of the text file&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;g&lt;/code&gt; or &lt;code&gt;1G&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Move to the beginning of the text file&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;/characters&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;search forward to the next occurrence of &lt;em&gt;characters&lt;/em&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;n&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;search for the next occurrence of the previous search&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;h&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;display help screen&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;q&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;quit less&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;less&lt;/code&gt; is &lt;code&gt;more&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Let&#39;s learn: man pages!</title>
+      <link>http://localhost:1313/posts/all_about_man-pages/</link>
+      <pubDate>Thu, 13 Oct 2022 11:30:03 +0600</pubDate>
+      <guid>http://localhost:1313/posts/all_about_man-pages/</guid>
+      <description>&lt;p&gt;&lt;code&gt;man&lt;/code&gt; - display a program&amp;rsquo;s manual page.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;man program &lt;span class=&#34;c1&#34;&gt;# program is the name of the command&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;On most Linux systems, &lt;code&gt;man&lt;/code&gt; uses &lt;code&gt;less&lt;/code&gt; to display manual page.&lt;/p&gt;
+&lt;p&gt;The &lt;em&gt;manual&lt;/em&gt; that man displays is broken into sections and covers not only user commands but also system administration commands, programming interfaces, file formats
+and more.&lt;/p&gt;
+&lt;p&gt;Man page organization:&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Section&lt;/th&gt;
+          &lt;th&gt;Contents&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;code&gt;1&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;user commands&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;code&gt;2&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;programming interfaces for kernel system calls&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;code&gt;3&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;programming interfaces to the C library&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;code&gt;4&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;special files such as &lt;em&gt;device nodes and drivers&lt;/em&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;code&gt;5&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;file formats&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;code&gt;6&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;games and amusements such as &lt;em&gt;screen savers&lt;/em&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;code&gt;7&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Miscellaneous&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;code&gt;8&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;System administration commands&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;code&gt;9&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Obscure kernel specs and interfaces&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;man section search_item
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;man &lt;span class=&#34;m&#34;&gt;5&lt;/span&gt; passwd
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Refer to a specific section of the manual to find what we are looking for.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Let&#39;s learn: Terminal Shortcuts!</title>
+      <link>http://localhost:1313/posts/all_about_linux_terminal/</link>
+      <pubDate>Sat, 23 Jul 2022 11:30:03 +0600</pubDate>
+      <guid>http://localhost:1313/posts/all_about_linux_terminal/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;To enter virtual consoles: &lt;code&gt;Ctrl+Alt+F1&lt;/code&gt; to &lt;code&gt;Ctrl+Alt+F6&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Switch from one to another console: &lt;code&gt;Alt+F1&lt;/code&gt; to &lt;code&gt;Alt+F6&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;To return to the graphical desktop: &lt;code&gt;Alt+F7&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;command&lt;/th&gt;
+          &lt;th&gt;meaning&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;code&gt;Ctrl+a&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;beginning of the line&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;code&gt;Ctrl+c&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;kill process/stop running&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;code&gt;Ctrl+d&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;ending terminal session&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;code&gt;Ctrl+e&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;end of line&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;code&gt;Ctrl+k&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;cut from &lt;!-- raw HTML omitted --&gt;cursor to the end&lt;!-- raw HTML omitted --&gt; of line&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;code&gt;Ctrl+l&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;clear screen&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;code&gt;Ctrl+u&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;cut from &lt;!-- raw HTML omitted --&gt;cursor to the beginning&lt;!-- raw HTML omitted --&gt; of line&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;code&gt;Ctrl+w&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;erase word from &lt;!-- raw HTML omitted --&gt;cursor to begin&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;code&gt;Ctrl+y&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;get back from last cut text&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;code&gt;Ctrl+z&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;froze the program/pause&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;code&gt;Alt+b&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;backward one word&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;code&gt;Alt+d&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;cut from &lt;!-- raw HTML omitted --&gt;cursor to end&lt;!-- raw HTML omitted --&gt; of word&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;code&gt;Alt+f&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;forward one word&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;code&gt;Alt+backspace&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;cut from &lt;strong&gt;cursor to beginning&lt;/strong&gt; of the word&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;code&gt;Ctrl+shift+c&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;copy from terminal&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;code&gt;Ctrl+shift+v&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;paste on terminal&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</description>
+    </item>
+  </channel>
+</rss>

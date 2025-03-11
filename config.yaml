@@ -1,0 +1,145 @@
+baseURL: https://dhar01.github.io/
+languageCode: en-us
+title: Loknath's Log
+pluralizelisttitles: false
+theme: PaperMod
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+params:
+  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  title: Loknath's Log
+  description: "logs of a Gopher"
+  keywords: [Blog, Portfolio]
+  author: Loknath Dhar
+  images: ["/images/cover.png"]
+  DateFormat: "January 2, 2006"
+  defaultTheme: light # dark, light
+  disableThemeToggle: true
+
+  ShowReadingTime: false
+  ShowShareButtons: false
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowWordCount: false
+  ShowRssButtonInSectionTermList: true
+  UseHugoToc: true
+  disableSpecial1stPost: true
+  disableScrollToTop: false
+  comments: true
+  hidemeta: false
+  hideSummary: false
+  showtoc: true
+  tocopen: false
+  hideFooter: false
+
+  assets:
+    disableHLJS: true # to disable highlight.js
+    disableFingerprinting: true
+    favicon: "/images/favicon.ico"
+    favicon16x16: "/images/favicon-16x16.png"
+    favicon32x32: "/images/favicon-32x32.png"
+    apple_touch_icon: "/images/apple-touch-icon.png"
+    safari_pinned_tab: "<link / abs url>"
+
+  label:
+    text: "#loki"
+    icon: /apple-touch-icon.png
+    iconHeight: 23
+    iconWidth: 23
+
+  # profile-mode
+  profileMode:
+    enabled: true
+    title: Loknath's Log
+    subtitle: "Logs of a Gopher living in the Linux shell, Go!"
+    imageUrl: "/images/profile.jpg"
+    imageWidth: 120
+    imageHeight: 120
+    imageTitle: loknath
+    buttons:
+      - name: Posts
+        url: posts
+      - name: Tags
+        url: tags
+
+  socialIcons:
+    - name: LinkedIn
+      url: "https://www.linkedin.com/in/dhar01/"
+    - name: Telegram
+      url: "https://t.me/Dhar01"
+    - name: github
+      url: "https://github.com/Dhar01"
+    - name: email
+      url: "mailto:loknathdhar66@gmail.com"
+    - name: RSS
+      url: "index.html"
+
+  analytics:
+    google:
+      SiteVerificationTag: "XYZabc"
+    bing:
+      SiteVerificationTag: "XYZabc"
+    yandex:
+      SiteVerificationTag: "XYZabc"
+
+  cover:
+    hidden: true # hide everywhere but not in structured data
+    hiddenInList: true # hide on list pages and home
+    hiddenInSingle: true # hide on single page
+
+  # for search
+  # https://fusejs.io/api/options.html
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
+    keys: ["title", "permalink", "summary", "content"]
+
+menu:
+
+  main:
+
+    - identifier: search
+      name: search
+      url: /search/
+      weight: 1
+
+    - identifier: tags
+      name: tags
+      url: /tags/
+      weight: 2
+
+    - identifier: about
+      name: about
+      url: /about/
+      weight: 3
+
+    - identifier: portfolio
+      name: portfolio
+      url: /portfolio/
+      weight: 4
+
+# pygmentsUseClasses: true
+
+markup:
+  highlight:
+    noClasses: false
+    # anchorLineNos: true
+    # codeFences: true
+    # guessSyntax: true
+    lineNos: true
+    tabWidth: 4
+    style: monokai

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Nginx on Loknath&#39;s Log</title>
+    <link>http://localhost:1313/tags/nginx/</link>
+    <description>Recent content in Nginx on Loknath&#39;s Log</description>
+    <image>
+      <title>Loknath&#39;s Log</title>
+      <url>http://localhost:1313/images/cover.png</url>
+      <link>http://localhost:1313/images/cover.png</link>
+    </image>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 20 May 2023 11:30:03 +0600</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Nginx Logging</title>
+      <link>http://localhost:1313/posts/nginx_logging/</link>
+      <pubDate>Sat, 20 May 2023 11:30:03 +0600</pubDate>
+      <guid>http://localhost:1313/posts/nginx_logging/</guid>
+      <description>&lt;p&gt;Nginx uses a few different directives to control system logging. The one included in the core module is called &lt;code&gt;error_log&lt;/code&gt;.&lt;/p&gt;
+&lt;h1 id=&#34;error_log-directive&#34;&gt;&lt;code&gt;error_log&lt;/code&gt; directive&lt;/h1&gt;
+&lt;p&gt;Syntax: &lt;code&gt;error_log log_file log_level&lt;/code&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;log_file&lt;/code&gt;: specifies the file where the logs will be written.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;log_level&lt;/code&gt;: specifies the lowest level of logging to be recorded.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;logging-levels&#34;&gt;Logging levels&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;emerg&lt;/code&gt;: emergency situations.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;alert&lt;/code&gt;:&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;crit&lt;/code&gt;:&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;error&lt;/code&gt;:&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;warn&lt;/code&gt;:&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;notice&lt;/code&gt;:&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;info&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;debug&lt;/code&gt;:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;Example&lt;!-- raw HTML omitted --&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;error_log /var/log/nginx/error.log crit&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Don&amp;#39;t log anything&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;error_log /dev/null crit&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;code&gt;error_log&lt;/code&gt; is part of the core module; the &lt;code&gt;access_log&lt;/code&gt; is part of the &lt;code&gt;HttpLogModule&lt;/code&gt;. This provides the ability to customise the log.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

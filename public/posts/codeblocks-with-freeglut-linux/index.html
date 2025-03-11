@@ -1,0 +1,208 @@
+<!doctype html><html lang=en dir=auto><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Setting up Codeblocks with Freeglut on Linux | Loknath's Log</title>
+<meta name=keywords content="how to"><meta name=description content="In my Computer Graphics class, the teacher asked us to setup Codeblocks for the glut. She gave us a tutorial on how to setup Codeblocks on windows but didn&rsquo;t provide any suggestion to set up on Linux. After some searching on google, I was able to setup Codeblocks with Freeglut (which is an alternative to Glut and available on Linux). This is a kind of writeup (or tutorial) on how I was able to setup Codeblocks with Freeglut."><meta name=author content="Loknath Dhar"><link rel=canonical href=http://localhost:1313/posts/codeblocks-with-freeglut-linux/><meta name=google-site-verification content="XYZabc"><meta name=yandex-verification content="XYZabc"><meta name=msvalidate.01 content="XYZabc"><link crossorigin=anonymous href=/assets/css/stylesheet.css rel="preload stylesheet" as=style><link rel=icon href=http://localhost:1313/images/favicon.ico><link rel=icon type=image/png sizes=16x16 href=http://localhost:1313/images/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=http://localhost:1313/images/favicon-32x32.png><link rel=apple-touch-icon href=http://localhost:1313/images/apple-touch-icon.png><link rel=mask-icon href=http://localhost:1313/%3Clink%20/%20abs%20url%3E><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=en href=http://localhost:1313/posts/codeblocks-with-freeglut-linux/><noscript><style>#theme-toggle,.top-link{display:none}</style></noscript><meta property="og:url" content="http://localhost:1313/posts/codeblocks-with-freeglut-linux/"><meta property="og:site_name" content="Loknath's Log"><meta property="og:title" content="Setting up Codeblocks with Freeglut on Linux"><meta property="og:description" content="In my Computer Graphics class, the teacher asked us to setup Codeblocks for the glut. She gave us a tutorial on how to setup Codeblocks on windows but didn’t provide any suggestion to set up on Linux. After some searching on google, I was able to setup Codeblocks with Freeglut (which is an alternative to Glut and available on Linux). This is a kind of writeup (or tutorial) on how I was able to setup Codeblocks with Freeglut."><meta property="og:locale" content="en-us"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-02-06T01:34:53+06:00"><meta property="article:modified_time" content="2021-02-06T01:34:53+06:00"><meta property="article:tag" content="How To"><meta property="og:image" content="http://localhost:1313/images/cover.png"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="http://localhost:1313/images/cover.png"><meta name=twitter:title content="Setting up Codeblocks with Freeglut on Linux"><meta name=twitter:description content="In my Computer Graphics class, the teacher asked us to setup Codeblocks for the glut. She gave us a tutorial on how to setup Codeblocks on windows but didn&rsquo;t provide any suggestion to set up on Linux. After some searching on google, I was able to setup Codeblocks with Freeglut (which is an alternative to Glut and available on Linux). This is a kind of writeup (or tutorial) on how I was able to setup Codeblocks with Freeglut."><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"http://localhost:1313/posts/"},{"@type":"ListItem","position":2,"name":"Setting up Codeblocks with Freeglut on Linux","item":"http://localhost:1313/posts/codeblocks-with-freeglut-linux/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Setting up Codeblocks with Freeglut on Linux","name":"Setting up Codeblocks with Freeglut on Linux","description":"In my Computer Graphics class, the teacher asked us to setup Codeblocks for the glut. She gave us a tutorial on how to setup Codeblocks on windows but didn\u0026rsquo;t provide any suggestion to set up on Linux. After some searching on google, I was able to setup Codeblocks with Freeglut (which is an alternative to Glut and available on Linux). This is a kind of writeup (or tutorial) on how I was able to setup Codeblocks with Freeglut.\n","keywords":["how to"],"articleBody":"In my Computer Graphics class, the teacher asked us to setup Codeblocks for the glut. She gave us a tutorial on how to setup Codeblocks on windows but didn’t provide any suggestion to set up on Linux. After some searching on google, I was able to setup Codeblocks with Freeglut (which is an alternative to Glut and available on Linux). This is a kind of writeup (or tutorial) on how I was able to setup Codeblocks with Freeglut.\nThis setup is tested and working on Pop os, as of writing, should be working with Ubuntu/Debian with the latest Codeblocks.\nAlso, I linked to the posts from where I collect these and setup Codeblocks to work properly.\nInstallation Part To work with all of these, of course, we have to install all the necessary files.\nFor Freeglut:\nsudo apt install g++ freeglut3 freeglut3-dev sudo apt install libxmu-dev libxi-dev For Codeblocks:\nsudo apt install codeblocks For OpenGL:\nsudo apt install build-essential libgl1-mesa-dev sudo apt install libglew-dev libsdl2-dev libsdl2-image-dev libglm-dev libfreetype6-dev # some libraries Check OpenGL installation:\nglxinfo | grep OpenGL Setup Part Open Codeblocks, go to settings \u003e Global Variables. Click new, it should look like this:\ntype freeglut, press ok and setup the rest like this:\nNow close the Codeblocks.\nResting part is collected from here.\nGo to /usr/share/codeblocks/templates, create the file freeglut.cbp and put the following code there: \u003c?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\" ?\u003e Save it.\nCreate a directory named freeglut on /usr/share/codeblocks/templates/wizard/. You will find another directory named glut there. Copy all the contents and paste it on the newly created freeglut directory.\nNow go to the created freeglut directory, edit the wizard.script file and paste the following:\n//////////////////////////////////////////////////////////////////////////////// // // FreeGLUT project wizard // //////////////////////////////////////////////////////////////////////////////// // globals FreeGlutPathDefault \u003c- _T(\"$(#freeglut)\"); FreeGlutPathDefaultInc \u003c- _T(\"$(#freeglut.include)\"); FreeGlutPathDefaultLib \u003c- _T(\"$(#freeglut.lib)\"); FreeGlutPath \u003c- _T(\"\"); function BeginWizard() { local intro_msg = _T(\"Welcome to the new FreeGLUT project wizard!\\n\\n\" + \"This wizard will guide you to create a new project\\n\" + \"using the FreeGLUT OpenGL extensions.\\n\\n\" + \"When you 're ready to proceed, please click \\\"Next\\\"...\"); local glutpath_descr = _T(\"Please select the location of FreeGLUT on your computer.\\n\" + \"This is the top-level folder where FreeGLUT was installed (unpacked).\\n\" + \"To help you, this folder must contain the subfolders\\n\" + \"\\\"include\\\" and \\\"lib\\\".\"); Wizard.AddInfoPage(_T(\"GlutIntro\"), intro_msg); Wizard.AddProjectPathPage(); if (PLATFORM == PLATFORM_MAC) { FreeGlutPathDefault=\"/System/Library/Frameworks/FreeGLUT.framework\"; } else Wizard.AddGenericSelectPathPage(_T(\"FreeGlutPath\"), glutpath_descr, _T(\"Please select FreeGLUT's location:\"), FreeGlutPathDefault); Wizard.AddCompilerPage(_T(\"\"), _T(\"*\"), true, true); } //////////////////////////////////////////////////////////////////////////////// // GLUT's path page //////////////////////////////////////////////////////////////////////////////// function OnLeave_GlutPath(fwd) { if (fwd) { local dir = Wizard.GetTextControlValue(_T(\"txtFolder\")); // txtFolder is the text control in GenericSelectPathPage local dir_nomacro = VerifyDirectory(dir); if (dir_nomacro.IsEmpty()) return false; // verify include dependencies local dir_nomacro_inc = GetCompilerIncludeDir(dir, FreeGlutPathDefault, FreeGlutPathDefaultInc); if (dir_nomacro_inc.IsEmpty()) return false; if (!VerifyFile(dir_nomacro_inc + wxFILE_SEP_PATH + _T(\"GL\"), _T(\"freeglut.h\"), _T(\"FreeGLUT's include\"))) return false; // verify library dependencies local dir_nomacro_lib = GetCompilerLibDir(dir, FreeGlutPathDefault, FreeGlutPathDefaultLib); if (dir_nomacro_lib.IsEmpty()) return false; if (PLATFORM == PLATFORM_MSW) { if (!VerifyLibFile(dir_nomacro_lib, _T(\"freeglut\"), _T(\"FreeGLUT's\"))) return false; } else { if (!VerifyLibFile(dir_nomacro_lib, _T(\"freeglut\"), _T(\"FreeGLUT's\"))) return false; } FreeGlutPath = dir; // Remember the original selection. local is_macro = _T(\"\"); // try to resolve the include directory as macro is_macro = GetCompilerIncludeMacro(dir, FreeGlutPathDefault, FreeGlutPathDefaultInc); if (is_macro.IsEmpty()) { // not possible -\u003e use the real inc path we had computed instead FreeGlutPathDefaultInc = dir_nomacro_inc; } // try to resolve the library directory as macro is_macro = GetCompilerLibMacro(dir, FreeGlutPathDefault, FreeGlutPathDefaultLib); if (is_macro.IsEmpty()) { // not possible -\u003e use the real lib path we had computed instead FreeGlutPathDefaultLib = dir_nomacro_lib; } } return true; } // return the files this project contains function GetFilesDir() { return _T(\"glut/files\"); } // setup the already created project function SetupProject(project) { // set project options if (PLATFORM != PLATFORM_MAC) { project.AddIncludeDir(FreeGlutPathDefaultInc); project.AddLibDir(FreeGlutPathDefaultLib); } // add link libraries if (PLATFORM == PLATFORM_MSW) { project.AddLinkLib(_T(\"freeglut\")); project.AddLinkLib(_T(\"opengl32\")); project.AddLinkLib(_T(\"glu32\")); project.AddLinkLib(_T(\"winmm\")); project.AddLinkLib(_T(\"gdi32\")); } else if (PLATFORM == PLATFORM_MAC) { project.AddLinkerOption(_T(\"-framework GLUT\")); project.AddLinkerOption(_T(\"-framework OpenGL\")); project.AddLinkerOption(_T(\"-framework Cocoa\")); // GLUT dependency } else { project.AddLinkLib(_T(\"glut\")); project.AddLinkLib(_T(\"GL\")); project.AddLinkLib(_T(\"GLU\")); project.AddLinkLib(_T(\"Xxf86vm\")); } // enable compiler warnings (project-wide) WarningsOn(project, Wizard.GetCompilerID()); // Debug local target = project.GetBuildTarget(Wizard.GetDebugName()); if (!IsNull(target)) { target.SetTargetType(ttConsoleOnly); // ttConsoleOnly: console for debugging target.SetOutputFilename(Wizard.GetDebugOutputDir() + Wizard.GetProjectName() + DOT_EXT_EXECUTABLE); target.SetWorkingDir(FreeGlutPath + _T(\"/bin\")); // enable generation of debugging symbols for target DebugSymbolsOn(target, Wizard.GetCompilerID()); } // Release target = project.GetBuildTarget(Wizard.GetReleaseName()); if (!IsNull(target)) { target.SetTargetType(ttExecutable); // ttExecutable: no console target.SetOutputFilename(Wizard.GetReleaseOutputDir() + Wizard.GetProjectName() + DOT_EXT_EXECUTABLE); target.SetWorkingDir(FreeGlutPath + _T(\"/bin\")); // enable optimizations for target OptimizationsOn(target, Wizard.GetCompilerID()); } return true; } Save it.\nNow on /usr/share/codeblocks/templates/wizard directory, there is a script named config.script and add the following line at the end of the file: RegisterWizard(wizProject, _T(\"freeglut\"), _T(\"FreeGLUT project\"), _T(\"2D/3D Graphics\")); Now go to this link, this is the Freeglut project’s source files, download the latest stable: Extract it. Copy the contents of the extracted folder and paste it on the /usr/share/codeblocks/templates/wizard/freeglut directory. At the time of writing, it looks like this: Codeblocks Setup Part If everything goes well/correctly, Codeblocks should be open without warning/showing any errors.\nOpen Codeblocks. Go to File \u003e New \u003e Projects and this dialog should be showing with Freeglut Project: Give a name of the project as you see fit: Then, specify the location where the Freeglut is: Leave the next dialog as it is (don’t change anything): At this moment your Codeblocks should be ready for the Freeglut projects.\nFinal Part Just checking if things are working or not.\nGo to sources, there should be a main.cpp file for test running: Build and Run! That’s it.\nOkay, that’s all. Hope, everything works fine. See ya later!\n","wordCount":"975","inLanguage":"en","image":"http://localhost:1313/images/cover.png","datePublished":"2021-02-06T01:34:53+06:00","dateModified":"2021-02-06T01:34:53+06:00","author":{"@type":"Person","name":"Loknath Dhar"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:1313/posts/codeblocks-with-freeglut-linux/"},"publisher":{"@type":"Organization","name":"Loknath's Log","logo":{"@type":"ImageObject","url":"http://localhost:1313/images/favicon.ico"}}}</script></head><body id=top><header class=header><nav class=nav><div class=logo><a href=http://localhost:1313/ accesskey=h title="#loki (Alt + H)"><img src=http://localhost:1313/apple-touch-icon.png alt aria-label=logo height=23>#loki</a><div class=logo-switches></div></div><ul id=menu><li><a href=http://localhost:1313/search/ title="search (Alt + /)" accesskey=/><span>search</span></a></li><li><a href=http://localhost:1313/tags/ title=tags><span>tags</span></a></li><li><a href=http://localhost:1313/about/ title=about><span>about</span></a></li><li><a href=http://localhost:1313/portfolio/ title=portfolio><span>portfolio</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=http://localhost:1313/>Home</a>&nbsp;»&nbsp;<a href=http://localhost:1313/posts/>Posts</a></div><h1 class="post-title entry-hint-parent">Setting up Codeblocks with Freeglut on Linux</h1><div class=post-meta><span title='2021-02-06 01:34:53 +0600 +06'>February 6, 2021</span>&nbsp;·&nbsp;Loknath Dhar</div></header><div class=toc><details><summary accesskey=c title="(Alt + C)"><span class=details>Table of Contents</span></summary><div class=inner><nav id=TableOfContents></nav></div></details></div><div class=post-content><p>In my Computer Graphics class, the teacher asked us to setup Codeblocks for the glut. She gave us a tutorial on how to setup Codeblocks on windows but didn&rsquo;t provide any suggestion to set up on Linux. After some searching on google, I was able to setup Codeblocks with <strong>Freeglut</strong> (<em>which is an alternative to Glut and available on Linux</em>). This is a kind of writeup (<em>or tutorial</em>) on how I was able to setup Codeblocks with Freeglut.</p><blockquote><p>This setup is tested and working on Pop os, as of writing, should be working with Ubuntu/Debian with the latest Codeblocks.</p></blockquote><p>Also, I linked to the posts from where I collect these and setup Codeblocks to work properly.</p><h1 id=installation-part>Installation Part<a hidden class=anchor aria-hidden=true href=#installation-part>#</a></h1><p>To work with all of these, of course, we have to install all the necessary files.</p><p>For Freeglut:</p><pre tabindex=0><code>sudo apt install g++ freeglut3 freeglut3-dev
+
+sudo apt install libxmu-dev libxi-dev
+</code></pre><p>For Codeblocks:</p><pre tabindex=0><code>sudo apt install codeblocks
+</code></pre><p>For <a href=https://en.wikibooks.org/wiki/OpenGL_Programming/Installation/Linux>OpenGL</a>:</p><pre tabindex=0><code>sudo apt install build-essential libgl1-mesa-dev
+
+sudo apt install libglew-dev libsdl2-dev libsdl2-image-dev libglm-dev libfreetype6-dev  # some libraries
+</code></pre><p>Check OpenGL installation:</p><pre tabindex=0><code>glxinfo | grep OpenGL
+</code></pre><h1 id=setup-part>Setup Part<a hidden class=anchor aria-hidden=true href=#setup-part>#</a></h1><p>Open Codeblocks, go to <code>settings > Global Variables</code>.
+Click <code>new</code>, it should look like this:</p><p><img alt="Alt Text" loading=lazy src=https://dev-to-uploads.s3.amazonaws.com/i/mbr16y8x8ejw824ka5ox.png></p><p>type <code>freeglut</code>, press ok and setup the rest like this:</p><p><img alt="Alt Text" loading=lazy src=https://dev-to-uploads.s3.amazonaws.com/i/1hez3gb1srizxze6bqbl.png></p><p>Now close the Codeblocks.</p><p>Resting part is collected from <a href="http://forums.codeblocks.org/index.php?topic=17291.0">here</a>.</p><ul><li>Go to <code>/usr/share/codeblocks/templates</code>, create the file <code>freeglut.cbp</code> and put the following code there:</li></ul><pre tabindex=0><code>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34; standalone=&#34;yes&#34; ?&gt;
+&lt;CodeBlocks_project_file&gt;
+    &lt;FileVersion major=&#34;1&#34; minor=&#34;4&#34; /&gt;
+    &lt;Project&gt;
+        &lt;Option title=&#34;freeglut&#34; /&gt;
+        &lt;Option pch_mode=&#34;0&#34; /&gt;
+        &lt;Option compiler=&#34;gcc&#34; /&gt;
+        &lt;Build&gt;
+            &lt;Target title=&#34;default&#34;&gt;
+                &lt;Option output=&#34;freeglut.exe&#34; /&gt;
+                &lt;Option type=&#34;0&#34; /&gt;
+                &lt;Option compiler=&#34;gcc&#34; /&gt;
+                &lt;Option includeInTargetAll=&#34;1&#34; /&gt;
+            &lt;/Target&gt;
+        &lt;/Build&gt;
+        &lt;Compiler&gt;
+            &lt;Add directory=&#34;$(#freeglut.include)&#34; /&gt;
+        &lt;/Compiler&gt;
+        &lt;Linker&gt;
+            &lt;Add library=&#34;freeglut&#34; /&gt;
+            &lt;Add library=&#34;glu32&#34; /&gt;
+            &lt;Add library=&#34;opengl32&#34; /&gt;
+            &lt;Add library=&#34;winmm&#34; /&gt;
+            &lt;Add library=&#34;gdi32&#34; /&gt;
+            &lt;Add library=&#34;user32&#34; /&gt;
+            &lt;Add library=&#34;kernel32&#34; /&gt;
+            &lt;Add directory=&#34;$(#freeglut.lib)&#34; /&gt;
+        &lt;/Linker&gt;
+        &lt;Unit filename=&#34;main.cpp&#34;&gt;
+            &lt;Option compilerVar=&#34;CPP&#34; /&gt;
+            &lt;Option target=&#34;default&#34; /&gt;
+        &lt;/Unit&gt;
+    &lt;/Project&gt;
+&lt;/CodeBlocks_project_file&gt;
+</code></pre><p>Save it.</p><ul><li><p>Create a directory named <strong>freeglut</strong> on <code>/usr/share/codeblocks/templates/wizard/</code>. You will find another directory named <strong>glut</strong> there. Copy all the contents and paste it on the newly created <strong>freeglut</strong> directory.</p></li><li><p>Now go to the created <strong>freeglut</strong> directory, edit the <code>wizard.script</code> file and paste the following:</p></li></ul><pre tabindex=0><code>////////////////////////////////////////////////////////////////////////////////
+//
+// FreeGLUT project wizard
+//
+////////////////////////////////////////////////////////////////////////////////
+
+// globals
+FreeGlutPathDefault    &lt;- _T(&#34;$(#freeglut)&#34;);
+FreeGlutPathDefaultInc &lt;- _T(&#34;$(#freeglut.include)&#34;);
+FreeGlutPathDefaultLib &lt;- _T(&#34;$(#freeglut.lib)&#34;);
+FreeGlutPath &lt;- _T(&#34;&#34;);
+
+function BeginWizard()
+{
+    local intro_msg = _T(&#34;Welcome to the new FreeGLUT project wizard!\n\n&#34; +
+                         &#34;This wizard will guide you to create a new project\n&#34; +
+                         &#34;using the FreeGLUT OpenGL extensions.\n\n&#34; +
+                         &#34;When you &#39;re ready to proceed, please click \&#34;Next\&#34;...&#34;);
+
+    local glutpath_descr = _T(&#34;Please select the location of FreeGLUT on your computer.\n&#34; +
+                              &#34;This is the top-level folder where FreeGLUT was installed (unpacked).\n&#34; +
+                              &#34;To help you, this folder must contain the subfolders\n&#34; +
+                              &#34;\&#34;include\&#34; and \&#34;lib\&#34;.&#34;);
+
+    Wizard.AddInfoPage(_T(&#34;GlutIntro&#34;), intro_msg);
+    Wizard.AddProjectPathPage();
+    if (PLATFORM == PLATFORM_MAC)
+    {
+        FreeGlutPathDefault=&#34;/System/Library/Frameworks/FreeGLUT.framework&#34;;
+    }
+    else
+        Wizard.AddGenericSelectPathPage(_T(&#34;FreeGlutPath&#34;), glutpath_descr, _T(&#34;Please select FreeGLUT&#39;s location:&#34;), FreeGlutPathDefault);
+    Wizard.AddCompilerPage(_T(&#34;&#34;), _T(&#34;*&#34;), true, true);
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// GLUT&#39;s path page
+////////////////////////////////////////////////////////////////////////////////
+
+function OnLeave_GlutPath(fwd)
+{
+    if (fwd)
+    {
+        local dir         = Wizard.GetTextControlValue(_T(&#34;txtFolder&#34;)); // txtFolder is the text control in GenericSelectPathPage
+        local dir_nomacro = VerifyDirectory(dir);
+
+        if (dir_nomacro.IsEmpty())
+            return false;
+
+        // verify include dependencies
+        local dir_nomacro_inc = GetCompilerIncludeDir(dir, FreeGlutPathDefault, FreeGlutPathDefaultInc);
+        if (dir_nomacro_inc.IsEmpty())
+            return false;
+        if (!VerifyFile(dir_nomacro_inc + wxFILE_SEP_PATH + _T(&#34;GL&#34;), _T(&#34;freeglut.h&#34;), _T(&#34;FreeGLUT&#39;s include&#34;))) return false;
+
+        // verify library dependencies
+        local dir_nomacro_lib = GetCompilerLibDir(dir, FreeGlutPathDefault, FreeGlutPathDefaultLib);
+        if (dir_nomacro_lib.IsEmpty())
+            return false;
+
+        if (PLATFORM == PLATFORM_MSW)
+        {
+            if (!VerifyLibFile(dir_nomacro_lib, _T(&#34;freeglut&#34;), _T(&#34;FreeGLUT&#39;s&#34;))) return false;
+        }
+        else
+        {
+            if (!VerifyLibFile(dir_nomacro_lib, _T(&#34;freeglut&#34;), _T(&#34;FreeGLUT&#39;s&#34;))) return false;
+        }
+
+
+        FreeGlutPath = dir; // Remember the original selection.
+
+        local is_macro = _T(&#34;&#34;);
+
+        // try to resolve the include directory as macro
+        is_macro = GetCompilerIncludeMacro(dir, FreeGlutPathDefault, FreeGlutPathDefaultInc);
+        if (is_macro.IsEmpty())
+        {
+            // not possible -&gt; use the real inc path we had computed instead
+            FreeGlutPathDefaultInc = dir_nomacro_inc;
+        }
+
+        // try to resolve the library directory as macro
+        is_macro = GetCompilerLibMacro(dir, FreeGlutPathDefault, FreeGlutPathDefaultLib);
+        if (is_macro.IsEmpty())
+        {
+            // not possible -&gt; use the real lib path we had computed instead
+            FreeGlutPathDefaultLib = dir_nomacro_lib;
+        }
+    }
+    return true;
+}
+
+// return the files this project contains
+function GetFilesDir()
+{
+    return _T(&#34;glut/files&#34;);
+}
+
+// setup the already created project
+function SetupProject(project)
+{
+    // set project options
+    if (PLATFORM != PLATFORM_MAC)
+    {
+        project.AddIncludeDir(FreeGlutPathDefaultInc);
+        project.AddLibDir(FreeGlutPathDefaultLib);
+    }
+
+    // add link libraries
+    if (PLATFORM == PLATFORM_MSW)
+    {
+        project.AddLinkLib(_T(&#34;freeglut&#34;));
+        project.AddLinkLib(_T(&#34;opengl32&#34;));
+        project.AddLinkLib(_T(&#34;glu32&#34;));
+        project.AddLinkLib(_T(&#34;winmm&#34;));
+        project.AddLinkLib(_T(&#34;gdi32&#34;));
+    }
+    else if (PLATFORM == PLATFORM_MAC)
+    {
+        project.AddLinkerOption(_T(&#34;-framework GLUT&#34;));
+        project.AddLinkerOption(_T(&#34;-framework OpenGL&#34;));
+
+        project.AddLinkerOption(_T(&#34;-framework Cocoa&#34;)); // GLUT dependency
+    }
+    else
+    {
+        project.AddLinkLib(_T(&#34;glut&#34;));
+        project.AddLinkLib(_T(&#34;GL&#34;));
+        project.AddLinkLib(_T(&#34;GLU&#34;));
+        project.AddLinkLib(_T(&#34;Xxf86vm&#34;));
+    }
+
+    // enable compiler warnings (project-wide)
+    WarningsOn(project, Wizard.GetCompilerID());
+
+    // Debug
+    local target = project.GetBuildTarget(Wizard.GetDebugName());
+    if (!IsNull(target))
+    {
+        target.SetTargetType(ttConsoleOnly); // ttConsoleOnly: console for debugging
+        target.SetOutputFilename(Wizard.GetDebugOutputDir() + Wizard.GetProjectName() + DOT_EXT_EXECUTABLE);
+        target.SetWorkingDir(FreeGlutPath + _T(&#34;/bin&#34;));
+        // enable generation of debugging symbols for target
+        DebugSymbolsOn(target, Wizard.GetCompilerID());
+    }
+
+    // Release
+    target = project.GetBuildTarget(Wizard.GetReleaseName());
+    if (!IsNull(target))
+    {
+        target.SetTargetType(ttExecutable); // ttExecutable: no console
+        target.SetOutputFilename(Wizard.GetReleaseOutputDir() + Wizard.GetProjectName() + DOT_EXT_EXECUTABLE);
+        target.SetWorkingDir(FreeGlutPath + _T(&#34;/bin&#34;));
+        // enable optimizations for target
+        OptimizationsOn(target, Wizard.GetCompilerID());
+    }
+
+    return true;
+}
+</code></pre><p>Save it.</p><ul><li>Now on <code>/usr/share/codeblocks/templates/wizard</code> directory, there is a script named <code>config.script</code> and add the following line at the end of the file:</li></ul><pre tabindex=0><code>RegisterWizard(wizProject,     _T(&#34;freeglut&#34;),     _T(&#34;FreeGLUT project&#34;),      _T(&#34;2D/3D Graphics&#34;));
+</code></pre><ul><li>Now go to this <a href=http://freeglut.sourceforge.net/index.php#download>link</a>, this is the Freeglut project&rsquo;s source files, download the latest stable:</li></ul><p><img alt="Alt Text" loading=lazy src=https://dev-to-uploads.s3.amazonaws.com/i/fjj0vpb4it4h7m019qff.png></p><ul><li>Extract it.</li><li>Copy the contents of the extracted folder and paste it on the <code>/usr/share/codeblocks/templates/wizard/freeglut</code> directory. At the time of writing, it looks like this:</li></ul><p><img alt="Alt Text" loading=lazy src=https://dev-to-uploads.s3.amazonaws.com/i/u4a6p1e0vtvdp1w2nf8x.png></p><h1 id=codeblocks-setup-part>Codeblocks Setup Part<a hidden class=anchor aria-hidden=true href=#codeblocks-setup-part>#</a></h1><p>If everything goes well/correctly, Codeblocks should be open without warning/showing any errors.</p><ul><li>Open Codeblocks. Go to <code>File > New > Projects</code> and this dialog should be showing with <strong>Freeglut</strong> Project:</li></ul><p><img alt="Alt Text" loading=lazy src=https://dev-to-uploads.s3.amazonaws.com/i/y2pa24rn1u9tm72uqup5.png></p><ul><li>Give a name of the project as you see fit:</li></ul><p><img alt="Alt Text" loading=lazy src=https://dev-to-uploads.s3.amazonaws.com/i/psjcznzq2vlrvzjtyzxi.png></p><ul><li>Then, specify the location where the Freeglut is:</li></ul><p><img alt="Alt Text" loading=lazy src=https://dev-to-uploads.s3.amazonaws.com/i/fenew0dfdnd90hqurosi.png></p><ul><li>Leave the next dialog as it is (<em>don&rsquo;t change anything</em>):</li></ul><p><img alt="Alt Text" loading=lazy src=https://dev-to-uploads.s3.amazonaws.com/i/8t821ivowtp62b2u03e9.png></p><p>At this moment your Codeblocks should be ready for the Freeglut projects.</p><h1 id=final-part>Final Part<a hidden class=anchor aria-hidden=true href=#final-part>#</a></h1><p>Just checking if things are working or not.</p><ul><li>Go to sources, there should be a <code>main.cpp</code> file for test running:</li></ul><p><img alt="Alt Text" loading=lazy src=https://dev-to-uploads.s3.amazonaws.com/i/87yljltqn34dxjsahem4.png></p><ul><li>Build and Run!</li></ul><p><img alt="Alt Text" loading=lazy src=https://dev-to-uploads.s3.amazonaws.com/i/i46ookx1e592pxvirdo8.png></p><p><img alt="Alt Text" loading=lazy src=https://dev-to-uploads.s3.amazonaws.com/i/pxpufqfqax0g9kicouog.png></p><p>That&rsquo;s it.</p><p>Okay, that&rsquo;s all. Hope, everything works fine.
+See ya later!</p></div><footer class=post-footer><ul class=post-tags><li><a href=http://localhost:1313/tags/how-to/>How To</a></li></ul><nav class=paginav><a class=prev href=http://localhost:1313/posts/custom-badges-github-profile/><span class=title>« Prev</span><br><span>Making custom badges using shields.io</span></a></nav></footer></article></main><footer class=footer><span>&copy; 2025 <a href=http://localhost:1313/>Loknath Dhar</a></span> ·</footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

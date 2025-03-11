@@ -1,0 +1,179 @@
+<!doctype html><html lang=en dir=auto><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Google Dorking (finding information) - OSINT | Loknath's Log</title>
+<meta name=keywords content="walkthrough"><meta name=description content='
+Everyone should learn how to search.
+(This post contains some google dorking techniques for finding information on the internet. Google is your friend.)
+
+Searching
+Narrow down search query, use "_something_".
+Ex: "Liverpool"
+For exact topic and site:
+site: website-name topic-name
+
+site: geekforgeeks sql
+Some terms
+
+  
+      
+          Term
+          Action
+      
+  
+  
+      
+          filetype:
+          search for a file by its extension
+      
+      
+          cache:
+          view google&rsquo;s cached version of a specified URL
+      
+      
+          intitle:
+          the specified phrase MUST appear in the title of the page
+      
+      
+          allintext:
+          searches specific text contained on any web page
+      
+      
+          allintitle:
+          show pages that contain titles with X characters
+      
+      
+          allinurl:
+          used to fetch results whose URL contains all the specified characters
+      
+      
+          inurl:
+          useful for single keyword, same as allinurl
+      
+      
+          intitle:
+          used to search for various keywords inside the title
+      
+      
+          inanchor:
+          useful when need to search for an exact anchor text used on any links.
+      
+      
+          intext:
+          useful to locate pages that contain characters or strings inside their text
+      
+      
+          site:
+          show the full list of all indexed URLs for the specified domain or sub-domain
+      
+      
+          *
+          wildcard used to search pages that contain anything before your word
+      
+      
+          |
+          logical operator, will show all the sites which contain both words
+      
+      
+          +
+          used to concatenate words, useful to detect pages that use more than specific key
+      
+      
+          -
+          used to avoiding showing results that contain certain words
+      
+  
+
+For example, searching for movies in online servers:'><meta name=author content="Loknath Dhar"><link rel=canonical href=http://localhost:1313/posts/google-fu/><meta name=google-site-verification content="XYZabc"><meta name=yandex-verification content="XYZabc"><meta name=msvalidate.01 content="XYZabc"><link crossorigin=anonymous href=/assets/css/stylesheet.css rel="preload stylesheet" as=style><link rel=icon href=http://localhost:1313/images/favicon.ico><link rel=icon type=image/png sizes=16x16 href=http://localhost:1313/images/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=http://localhost:1313/images/favicon-32x32.png><link rel=apple-touch-icon href=http://localhost:1313/images/apple-touch-icon.png><link rel=mask-icon href=http://localhost:1313/%3Clink%20/%20abs%20url%3E><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=en href=http://localhost:1313/posts/google-fu/><noscript><style>#theme-toggle,.top-link{display:none}</style></noscript><meta property="og:url" content="http://localhost:1313/posts/google-fu/"><meta property="og:site_name" content="Loknath's Log"><meta property="og:title" content="Google Dorking (finding information) - OSINT"><meta property="og:description" content=' Everyone should learn how to search.
+(This post contains some google dorking techniques for finding information on the internet. Google is your friend.)
+Searching Narrow down search query, use "_something_". Ex: "Liverpool"
+For exact topic and site:
+site: website-name topic-name site: geekforgeeks sql Some terms Term Action filetype: search for a file by its extension cache: view google’s cached version of a specified URL intitle: the specified phrase MUST appear in the title of the page allintext: searches specific text contained on any web page allintitle: show pages that contain titles with X characters allinurl: used to fetch results whose URL contains all the specified characters inurl: useful for single keyword, same as allinurl intitle: used to search for various keywords inside the title inanchor: useful when need to search for an exact anchor text used on any links. intext: useful to locate pages that contain characters or strings inside their text site: show the full list of all indexed URLs for the specified domain or sub-domain * wildcard used to search pages that contain anything before your word | logical operator, will show all the sites which contain both words + used to concatenate words, useful to detect pages that use more than specific key - used to avoiding showing results that contain certain words For example, searching for movies in online servers:'><meta property="og:locale" content="en-us"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2022-02-25T00:00:00+00:00"><meta property="article:modified_time" content="2022-02-25T00:00:00+00:00"><meta property="article:tag" content="Walkthrough"><meta property="og:image" content="http://localhost:1313/images/cover.png"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="http://localhost:1313/images/cover.png"><meta name=twitter:title content="Google Dorking (finding information) - OSINT"><meta name=twitter:description content='
+Everyone should learn how to search.
+(This post contains some google dorking techniques for finding information on the internet. Google is your friend.)
+
+Searching
+Narrow down search query, use "_something_".
+Ex: "Liverpool"
+For exact topic and site:
+site: website-name topic-name
+
+site: geekforgeeks sql
+Some terms
+
+  
+      
+          Term
+          Action
+      
+  
+  
+      
+          filetype:
+          search for a file by its extension
+      
+      
+          cache:
+          view google&rsquo;s cached version of a specified URL
+      
+      
+          intitle:
+          the specified phrase MUST appear in the title of the page
+      
+      
+          allintext:
+          searches specific text contained on any web page
+      
+      
+          allintitle:
+          show pages that contain titles with X characters
+      
+      
+          allinurl:
+          used to fetch results whose URL contains all the specified characters
+      
+      
+          inurl:
+          useful for single keyword, same as allinurl
+      
+      
+          intitle:
+          used to search for various keywords inside the title
+      
+      
+          inanchor:
+          useful when need to search for an exact anchor text used on any links.
+      
+      
+          intext:
+          useful to locate pages that contain characters or strings inside their text
+      
+      
+          site:
+          show the full list of all indexed URLs for the specified domain or sub-domain
+      
+      
+          *
+          wildcard used to search pages that contain anything before your word
+      
+      
+          |
+          logical operator, will show all the sites which contain both words
+      
+      
+          +
+          used to concatenate words, useful to detect pages that use more than specific key
+      
+      
+          -
+          used to avoiding showing results that contain certain words
+      
+  
+
+For example, searching for movies in online servers:'><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"http://localhost:1313/posts/"},{"@type":"ListItem","position":2,"name":"Google Dorking (finding information) - OSINT","item":"http://localhost:1313/posts/google-fu/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Google Dorking (finding information) - OSINT","name":"Google Dorking (finding information) - OSINT","description":" Everyone should learn how to search.\n(This post contains some google dorking techniques for finding information on the internet. Google is your friend.)\nSearching Narrow down search query, use \u0026quot;_something_\u0026quot;. Ex: \u0026quot;Liverpool\u0026quot;\nFor exact topic and site:\nsite: website-name topic-name site: geekforgeeks sql Some terms Term Action filetype: search for a file by its extension cache: view google\u0026rsquo;s cached version of a specified URL intitle: the specified phrase MUST appear in the title of the page allintext: searches specific text contained on any web page allintitle: show pages that contain titles with X characters allinurl: used to fetch results whose URL contains all the specified characters inurl: useful for single keyword, same as allinurl intitle: used to search for various keywords inside the title inanchor: useful when need to search for an exact anchor text used on any links. intext: useful to locate pages that contain characters or strings inside their text site: show the full list of all indexed URLs for the specified domain or sub-domain * wildcard used to search pages that contain anything before your word | logical operator, will show all the sites which contain both words + used to concatenate words, useful to detect pages that use more than specific key - used to avoiding showing results that contain certain words For example, searching for movies in online servers:\n","keywords":["walkthrough"],"articleBody":" Everyone should learn how to search.\n(This post contains some google dorking techniques for finding information on the internet. Google is your friend.)\nSearching Narrow down search query, use \"_something_\". Ex: \"Liverpool\"\nFor exact topic and site:\nsite: website-name topic-name site: geekforgeeks sql Some terms Term Action filetype: search for a file by its extension cache: view google’s cached version of a specified URL intitle: the specified phrase MUST appear in the title of the page allintext: searches specific text contained on any web page allintitle: show pages that contain titles with X characters allinurl: used to fetch results whose URL contains all the specified characters inurl: useful for single keyword, same as allinurl intitle: used to search for various keywords inside the title inanchor: useful when need to search for an exact anchor text used on any links. intext: useful to locate pages that contain characters or strings inside their text site: show the full list of all indexed URLs for the specified domain or sub-domain * wildcard used to search pages that contain anything before your word | logical operator, will show all the sites which contain both words + used to concatenate words, useful to detect pages that use more than specific key - used to avoiding showing results that contain certain words For example, searching for movies in online servers:\nintitle:index of movie-name intitle:index of? movie-name.mkv More examples Keyword related To find similar websites, use related: Ex: related:freecodecamp.org\nKeyword search: To search within a website, use search:d Ex: search:freecodecamp.org web development\nKeyword ... To search within a time-frame, use ... Ex: Developers 1992... 1999\nKeyword - To exclude a word, use - Ex: Android Development -Flutter\nKeyword * To replace missing words, use * Ex: *oriented programming in python\nKeyword define: To find a definition, use define: Ex: define:object oriented programming\nKeyword \" \" To find exact phase, use \" \" Ex: \"python free tutorials\"\nKeyword site: To search for a particular website or content, use site: Ex: site: web dev blog\n","wordCount":"336","inLanguage":"en","image":"http://localhost:1313/images/cover.png","datePublished":"2022-02-25T00:00:00Z","dateModified":"2022-02-25T00:00:00Z","author":{"@type":"Person","name":"Loknath Dhar"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:1313/posts/google-fu/"},"publisher":{"@type":"Organization","name":"Loknath's Log","logo":{"@type":"ImageObject","url":"http://localhost:1313/images/favicon.ico"}}}</script></head><body id=top><header class=header><nav class=nav><div class=logo><a href=http://localhost:1313/ accesskey=h title="#loki (Alt + H)"><img src=http://localhost:1313/apple-touch-icon.png alt aria-label=logo height=23>#loki</a><div class=logo-switches></div></div><ul id=menu><li><a href=http://localhost:1313/search/ title="search (Alt + /)" accesskey=/><span>search</span></a></li><li><a href=http://localhost:1313/categories/ title=categories><span>categories</span></a></li><li><a href=http://localhost:1313/tags/ title=tags><span>tags</span></a></li><li><a href=http://localhost:1313/about/ title=about><span>about</span></a></li><li><a href=http://localhost:1313/portfolio/ title=portfolio><span>portfolio</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=http://localhost:1313/>Home</a>&nbsp;»&nbsp;<a href=http://localhost:1313/posts/>Posts</a></div><h1 class="post-title entry-hint-parent">Google Dorking (finding information) - OSINT</h1><div class=post-meta><span title='2022-02-25 00:00:00 +0000 UTC'>February 25, 2022</span>&nbsp;·&nbsp;Loknath Dhar</div></header><div class=toc><details><summary accesskey=c title="(Alt + C)"><span class=details>Table of Contents</span></summary><div class=inner><nav id=TableOfContents><ul><li><a href=#searching>Searching</a></li><li><a href=#some-terms>Some terms</a></li><li><a href=#more-examples>More examples</a><ul><li><a href=#keyword-related>Keyword <code>related</code></a></li><li><a href=#keyword-search>Keyword <code>search:</code></a></li><li><a href=#keyword->Keyword <code>...</code></a></li><li><a href=#keyword-->Keyword <code>-</code></a></li><li><a href=#keyword--1>Keyword <code>*</code></a></li><li><a href=#keyword-define>Keyword <code>define:</code></a></li><li><a href=#keyword---1>Keyword <code>" "</code></a></li><li><a href=#keyword-site>Keyword <code>site:</code></a></li></ul></li></ul></nav></div></details></div><div class=post-content><blockquote><p>Everyone should learn how to search.</p></blockquote><p>(<em>This post contains some google dorking techniques for finding information on the internet. Google is your friend.</em>)</p><hr><h2 id=searching>Searching<a hidden class=anchor aria-hidden=true href=#searching>#</a></h2><p>Narrow down search query, use <strong>"_something_"</strong>.
+Ex: <code>"Liverpool"</code></p><p>For exact topic and site:</p><pre tabindex=0><code>site: website-name topic-name
+
+site: geekforgeeks sql
+</code></pre><h2 id=some-terms>Some terms<a hidden class=anchor aria-hidden=true href=#some-terms>#</a></h2><table><thead><tr><th style=text-align:center><strong>Term</strong></th><th><strong>Action</strong></th></tr></thead><tbody><tr><td style=text-align:center><code>filetype:</code></td><td>search for a file by its extension</td></tr><tr><td style=text-align:center><code>cache:</code></td><td>view google&rsquo;s cached version of a specified URL</td></tr><tr><td style=text-align:center><code>intitle:</code></td><td>the specified phrase <em>MUST</em> appear in the title of the page</td></tr><tr><td style=text-align:center><code>allintext:</code></td><td>searches specific text contained on any web page</td></tr><tr><td style=text-align:center><code>allintitle:</code></td><td>show pages that contain titles with X characters</td></tr><tr><td style=text-align:center><code>allinurl:</code></td><td>used to fetch results whose URL contains all the specified characters</td></tr><tr><td style=text-align:center><code>inurl:</code></td><td>useful for single keyword, same as <code>allinurl</code></td></tr><tr><td style=text-align:center><code>intitle:</code></td><td>used to search for various keywords inside the title</td></tr><tr><td style=text-align:center><code>inanchor:</code></td><td>useful when need to search for an exact anchor text used on any links.</td></tr><tr><td style=text-align:center><code>intext:</code></td><td>useful to locate pages that contain characters or strings inside their text</td></tr><tr><td style=text-align:center><code>site:</code></td><td>show the full list of all indexed URLs for the specified domain or sub-domain</td></tr><tr><td style=text-align:center><code>*</code></td><td>wildcard used to search pages that contain <em>anything</em> before your word</td></tr><tr><td style=text-align:center>|</td><td>logical operator, will show all the sites which contain both words</td></tr><tr><td style=text-align:center><code>+</code></td><td>used to concatenate words, useful to detect pages that use more than specific key</td></tr><tr><td style=text-align:center><code>-</code></td><td>used to avoiding showing results that contain certain words</td></tr></tbody></table><p>For example, searching for movies in online servers:</p><pre tabindex=0><code>intitle:index of movie-name
+
+intitle:index of? movie-name.mkv
+</code></pre><h2 id=more-examples>More examples<a hidden class=anchor aria-hidden=true href=#more-examples>#</a></h2><h3 id=keyword-related>Keyword <code>related</code><a hidden class=anchor aria-hidden=true href=#keyword-related>#</a></h3><p>To find similar websites, use <code>related:</code> Ex: <code>related:freecodecamp.org</code></p><h3 id=keyword-search>Keyword <code>search:</code><a hidden class=anchor aria-hidden=true href=#keyword-search>#</a></h3><p>To search within a website, use <code>search:</code>d Ex: <code>search:freecodecamp.org web development</code></p><h3 id=keyword->Keyword <code>...</code><a hidden class=anchor aria-hidden=true href=#keyword->#</a></h3><p>To search within a time-frame, use <code>...</code> Ex: <code>Developers 1992... 1999</code></p><h3 id=keyword-->Keyword <code>-</code><a hidden class=anchor aria-hidden=true href=#keyword-->#</a></h3><p>To exclude a word, use <code>-</code> Ex: <code>Android Development -Flutter</code></p><h3 id=keyword--1>Keyword <code>*</code><a hidden class=anchor aria-hidden=true href=#keyword--1>#</a></h3><p>To replace missing words, use <code>*</code> Ex: <code>*oriented programming in python</code></p><h3 id=keyword-define>Keyword <code>define:</code><a hidden class=anchor aria-hidden=true href=#keyword-define>#</a></h3><p>To find a definition, use <code>define:</code> Ex: <code>define:object oriented programming</code></p><h3 id=keyword---1>Keyword <code>" "</code><a hidden class=anchor aria-hidden=true href=#keyword---1>#</a></h3><p>To find exact phase, use <code>" "</code> Ex: <code>"python free tutorials"</code></p><h3 id=keyword-site>Keyword <code>site:</code><a hidden class=anchor aria-hidden=true href=#keyword-site>#</a></h3><p>To search for a particular website or content, use <code>site:</code> Ex: <code>site: web dev blog</code></p></div><footer class=post-footer><ul class=post-tags><li><a href=http://localhost:1313/tags/walkthrough/>Walkthrough</a></li></ul><nav class=paginav><a class=prev href=http://localhost:1313/posts/custom-badges-github-profile/><span class=title>« Prev</span><br><span>Making custom badges using shields.io</span>
+</a><a class=next href=http://localhost:1313/posts/codeblocks-with-freeglut-linux/><span class=title>Next »</span><br><span>Setting up Codeblocks with Freeglut on Linux</span></a></nav></footer></article></main><footer class=footer><span>&copy; 2025 <a href=http://localhost:1313/>Loknath Dhar</a></span> ·</footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

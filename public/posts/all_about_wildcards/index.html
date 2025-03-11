@@ -1,0 +1,70 @@
+<!doctype html><html lang=en dir=auto><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Let's learn: Wildcards! | Loknath's Log</title>
+<meta name=keywords content="tools,linux,cheatsheet"><meta name=description content="Wildcards (also known as globbing) allows us to select filenames based on patterns of characters.
+
+  
+      
+          Wildcard
+          Meaning
+      
+  
+  
+      
+          *
+          matches any character
+      
+      
+          ?
+          matches any single character
+      
+      
+          [characters]
+          matches any character that is a member of the set characters
+      
+      
+          [!characters]
+          matches any character that is not a member of the set characters
+      
+      
+          [[:class:]]
+          matches any character that is a member of the specified class
+      
+  
+
+Commonly used character classes:"><meta name=author content="Loknath Dhar"><link rel=canonical href=http://localhost:1313/posts/all_about_wildcards/><meta name=google-site-verification content="XYZabc"><meta name=yandex-verification content="XYZabc"><meta name=msvalidate.01 content="XYZabc"><link crossorigin=anonymous href=/assets/css/stylesheet.css rel="preload stylesheet" as=style><link rel=icon href=http://localhost:1313/images/favicon.ico><link rel=icon type=image/png sizes=16x16 href=http://localhost:1313/images/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=http://localhost:1313/images/favicon-32x32.png><link rel=apple-touch-icon href=http://localhost:1313/images/apple-touch-icon.png><link rel=mask-icon href=http://localhost:1313/%3Clink%20/%20abs%20url%3E><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=en href=http://localhost:1313/posts/all_about_wildcards/><noscript><style>#theme-toggle,.top-link{display:none}</style></noscript><meta property="og:url" content="http://localhost:1313/posts/all_about_wildcards/"><meta property="og:site_name" content="Loknath's Log"><meta property="og:title" content="Let's learn: Wildcards!"><meta property="og:description" content="Wildcards (also known as globbing) allows us to select filenames based on patterns of characters.
+Wildcard Meaning * matches any character ? matches any single character [characters] matches any character that is a member of the set characters [!characters] matches any character that is not a member of the set characters [[:class:]] matches any character that is a member of the specified class Commonly used character classes:"><meta property="og:locale" content="en-us"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2023-01-18T11:30:03+06:00"><meta property="article:modified_time" content="2023-01-18T11:30:03+06:00"><meta property="article:tag" content="Tools"><meta property="article:tag" content="Linux"><meta property="article:tag" content="Cheatsheet"><meta property="og:image" content="http://localhost:1313/images/cover.png"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="http://localhost:1313/images/cover.png"><meta name=twitter:title content="Let's learn: Wildcards!"><meta name=twitter:description content="Wildcards (also known as globbing) allows us to select filenames based on patterns of characters.
+
+  
+      
+          Wildcard
+          Meaning
+      
+  
+  
+      
+          *
+          matches any character
+      
+      
+          ?
+          matches any single character
+      
+      
+          [characters]
+          matches any character that is a member of the set characters
+      
+      
+          [!characters]
+          matches any character that is not a member of the set characters
+      
+      
+          [[:class:]]
+          matches any character that is a member of the specified class
+      
+  
+
+Commonly used character classes:"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"http://localhost:1313/posts/"},{"@type":"ListItem","position":2,"name":"Let's learn: Wildcards!","item":"http://localhost:1313/posts/all_about_wildcards/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Let's learn: Wildcards!","name":"Let\u0027s learn: Wildcards!","description":"Wildcards (also known as globbing) allows us to select filenames based on patterns of characters.\nWildcard Meaning * matches any character ? matches any single character [characters] matches any character that is a member of the set characters [!characters] matches any character that is not a member of the set characters [[:class:]] matches any character that is a member of the specified class Commonly used character classes:\n","keywords":["tools","linux","cheatsheet"],"articleBody":"Wildcards (also known as globbing) allows us to select filenames based on patterns of characters.\nWildcard Meaning * matches any character ? matches any single character [characters] matches any character that is a member of the set characters [!characters] matches any character that is not a member of the set characters [[:class:]] matches any character that is a member of the specified class Commonly used character classes:\nCharacter class meaning [:alnum:] matches any alphanumeric character [:alpha:] matches any alphabetic character [:digit:] matches any numeral [:lower:] matches any lowercase letter [:upper:] matches any UPPERCASE letter Examples [[:upper:]]* : Any file beginning with an uppercase letter.\n*[[:lower:]123] : Any file ending with a lowercase letter or the numerals “1”, “2”, or “3”.\nBACKUP.[0-9][0-9][0-9] : Any file beginning with “BACKUP.” followed by exactly three numerals.\n[abc]* : Any file beginning with either an “a”, a “b”, or a “c”\n","wordCount":"146","inLanguage":"en","image":"http://localhost:1313/images/cover.png","datePublished":"2023-01-18T11:30:03+06:00","dateModified":"2023-01-18T11:30:03+06:00","author":{"@type":"Person","name":"Loknath Dhar"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:1313/posts/all_about_wildcards/"},"publisher":{"@type":"Organization","name":"Loknath's Log","logo":{"@type":"ImageObject","url":"http://localhost:1313/images/favicon.ico"}}}</script></head><body id=top><header class=header><nav class=nav><div class=logo><a href=http://localhost:1313/ accesskey=h title="#loki (Alt + H)"><img src=http://localhost:1313/apple-touch-icon.png alt aria-label=logo height=23>#loki</a><div class=logo-switches></div></div><ul id=menu><li><a href=http://localhost:1313/search/ title="search (Alt + /)" accesskey=/><span>search</span></a></li><li><a href=http://localhost:1313/categories/ title=categories><span>categories</span></a></li><li><a href=http://localhost:1313/tags/ title=tags><span>tags</span></a></li><li><a href=http://localhost:1313/about/ title=about><span>about</span></a></li><li><a href=http://localhost:1313/portfolio/ title=portfolio><span>portfolio</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=http://localhost:1313/>Home</a>&nbsp;»&nbsp;<a href=http://localhost:1313/posts/>Posts</a></div><h1 class="post-title entry-hint-parent">Let's learn: Wildcards!</h1><div class=post-meta><span title='2023-01-18 11:30:03 +0600 +06'>January 18, 2023</span>&nbsp;·&nbsp;Loknath Dhar</div></header><div class=toc><details><summary accesskey=c title="(Alt + C)"><span class=details>Table of Contents</span></summary><div class=inner><nav id=TableOfContents><ul><li><ul><li></li></ul></li></ul></nav></div></details></div><div class=post-content><p>Wildcards (<em>also known as globbing</em>) allows us to select filenames based on patterns of characters.</p><table><thead><tr><th>Wildcard</th><th>Meaning</th></tr></thead><tbody><tr><td><code>*</code></td><td>matches any character</td></tr><tr><td><code>?</code></td><td>matches any single character</td></tr><tr><td><code>[characters]</code></td><td>matches any <em>character</em> that is a member of the <em>set characters</em></td></tr><tr><td><code>[!characters]</code></td><td>matches any <em>character</em> that is not a member of the <em>set characters</em></td></tr><tr><td><code>[[:class:]]</code></td><td>matches any <em>character</em> that is a member of the specified <em>class</em></td></tr></tbody></table><p>Commonly used <em>character classes</em>:</p><table><thead><tr><th>Character class</th><th>meaning</th></tr></thead><tbody><tr><td><code>[:alnum:]</code></td><td>matches any alphanumeric character</td></tr><tr><td><code>[:alpha:]</code></td><td>matches any alphabetic character</td></tr><tr><td><code>[:digit:]</code></td><td>matches any numeral</td></tr><tr><td><code>[:lower:]</code></td><td>matches any lowercase letter</td></tr><tr><td><code>[:upper:]</code></td><td>matches any UPPERCASE letter</td></tr></tbody></table><h4 id=examples>Examples<a hidden class=anchor aria-hidden=true href=#examples>#</a></h4><p><code>[[:upper:]]*</code> : Any file beginning with an uppercase letter.</p><p><code>*[[:lower:]123]</code> : Any file ending with a lowercase letter or
+the numerals “1”, “2”, or “3”.</p><p><code>BACKUP.[0-9][0-9][0-9]</code> : Any file beginning with “BACKUP.”
+followed by exactly three numerals.</p><p><code>[abc]*</code> : Any file beginning with either an “a”, a
+“b”, or a “c”</p></div><footer class=post-footer><ul class=post-tags><li><a href=http://localhost:1313/tags/tools/>Tools</a></li><li><a href=http://localhost:1313/tags/linux/>Linux</a></li><li><a href=http://localhost:1313/tags/cheatsheet/>Cheatsheet</a></li></ul><nav class=paginav><a class=prev href=http://localhost:1313/posts/all_about_vim/><span class=title>« Prev</span><br><span>Let's learn: Vim/NeoVim!</span>
+</a><a class=next href=http://localhost:1313/posts/all-about-grep/><span class=title>Next »</span><br><span>Let's learn: grep!</span></a></nav></footer></article></main><footer class=footer><span>&copy; 2025 <a href=http://localhost:1313/>Loknath Dhar</a></span> ·</footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

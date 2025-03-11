@@ -1,0 +1,262 @@
+<!doctype html><html lang=en dir=auto><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>TIL: systemctl! | Loknath's Log</title>
+<meta name=keywords content="TIL"><meta name=description content="Service management
+
+
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+
+
+sudo systemctl start app.service
+
+sudo systemctl stop app.service
+
+sudo systemctl restart app.service
+
+sudo systemctl reload app.service
+
+sudo systemctl reload-or-restart app.service
+
+sudo systemctl enable app.service
+
+sudo systemctl disable app.service
+
+
+Checking status
+
+
+1
+2
+3
+4
+5
+6
+7
+
+
+systemctl status app.service
+
+systemctl is-active app.service
+
+systemctl is-enabled app.service
+
+systemctl is-failed app.service
+
+
+System state overview
+
+
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+
+
+# see a list of active units
+systemctl list-units
+
+systemctl # returns same as above
+
+systemctl list-units --all
+
+systemctl list-units --all --state=inactive
+
+systemctl list-units --type=service
+
+
+To see every available units in the system paths (including those that systemd has not attempted to load):"><meta name=author content="Loknath Dhar"><link rel=canonical href=http://localhost:1313/posts/all_about_systemctl/><meta name=google-site-verification content="XYZabc"><meta name=yandex-verification content="XYZabc"><meta name=msvalidate.01 content="XYZabc"><link crossorigin=anonymous href=/assets/css/stylesheet.css rel="preload stylesheet" as=style><link rel=icon href=http://localhost:1313/images/favicon.ico><link rel=icon type=image/png sizes=16x16 href=http://localhost:1313/images/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=http://localhost:1313/images/favicon-32x32.png><link rel=apple-touch-icon href=http://localhost:1313/images/apple-touch-icon.png><link rel=mask-icon href=http://localhost:1313/%3Clink%20/%20abs%20url%3E><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=en href=http://localhost:1313/posts/all_about_systemctl/><noscript><style>#theme-toggle,.top-link{display:none}</style></noscript><meta property="og:url" content="http://localhost:1313/posts/all_about_systemctl/"><meta property="og:site_name" content="Loknath's Log"><meta property="og:title" content="TIL: systemctl!"><meta property="og:description" content="Service management 1 2 3 4 5 6 7 8 9 10 11 12 13 sudo systemctl start app.service sudo systemctl stop app.service sudo systemctl restart app.service sudo systemctl reload app.service sudo systemctl reload-or-restart app.service sudo systemctl enable app.service sudo systemctl disable app.service Checking status 1 2 3 4 5 6 7 systemctl status app.service systemctl is-active app.service systemctl is-enabled app.service systemctl is-failed app.service System state overview 1 2 3 4 5 6 7 8 9 10 # see a list of active units systemctl list-units systemctl # returns same as above systemctl list-units --all systemctl list-units --all --state=inactive systemctl list-units --type=service To see every available units in the system paths (including those that systemd has not attempted to load):"><meta property="og:locale" content="en-us"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2023-03-20T11:30:03+06:00"><meta property="article:modified_time" content="2023-03-20T11:30:03+06:00"><meta property="article:tag" content="TIL"><meta property="og:image" content="http://localhost:1313/images/cover.png"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="http://localhost:1313/images/cover.png"><meta name=twitter:title content="TIL: systemctl!"><meta name=twitter:description content="Service management
+
+
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+
+
+sudo systemctl start app.service
+
+sudo systemctl stop app.service
+
+sudo systemctl restart app.service
+
+sudo systemctl reload app.service
+
+sudo systemctl reload-or-restart app.service
+
+sudo systemctl enable app.service
+
+sudo systemctl disable app.service
+
+
+Checking status
+
+
+1
+2
+3
+4
+5
+6
+7
+
+
+systemctl status app.service
+
+systemctl is-active app.service
+
+systemctl is-enabled app.service
+
+systemctl is-failed app.service
+
+
+System state overview
+
+
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+
+
+# see a list of active units
+systemctl list-units
+
+systemctl # returns same as above
+
+systemctl list-units --all
+
+systemctl list-units --all --state=inactive
+
+systemctl list-units --type=service
+
+
+To see every available units in the system paths (including those that systemd has not attempted to load):"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"http://localhost:1313/posts/"},{"@type":"ListItem","position":2,"name":"TIL: systemctl!","item":"http://localhost:1313/posts/all_about_systemctl/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"TIL: systemctl!","name":"TIL: systemctl!","description":"Service management 1 2 3 4 5 6 7 8 9 10 11 12 13 sudo systemctl start app.service sudo systemctl stop app.service sudo systemctl restart app.service sudo systemctl reload app.service sudo systemctl reload-or-restart app.service sudo systemctl enable app.service sudo systemctl disable app.service Checking status 1 2 3 4 5 6 7 systemctl status app.service systemctl is-active app.service systemctl is-enabled app.service systemctl is-failed app.service System state overview 1 2 3 4 5 6 7 8 9 10 # see a list of active units systemctl list-units systemctl # returns same as above systemctl list-units --all systemctl list-units --all --state=inactive systemctl list-units --type=service To see every available units in the system paths (including those that systemd has not attempted to load):\n","keywords":["TIL"],"articleBody":"Service management 1 2 3 4 5 6 7 8 9 10 11 12 13 sudo systemctl start app.service sudo systemctl stop app.service sudo systemctl restart app.service sudo systemctl reload app.service sudo systemctl reload-or-restart app.service sudo systemctl enable app.service sudo systemctl disable app.service Checking status 1 2 3 4 5 6 7 systemctl status app.service systemctl is-active app.service systemctl is-enabled app.service systemctl is-failed app.service System state overview 1 2 3 4 5 6 7 8 9 10 # see a list of active units systemctl list-units systemctl # returns same as above systemctl list-units --all systemctl list-units --all --state=inactive systemctl list-units --type=service To see every available units in the system paths (including those that systemd has not attempted to load):\n1 systemctl list-unit-files The state:\nenabled disabled static: means that the unit files does not contain an install section, which is used to enable a unit. masked: Unit management Show a unit file To display the unit file that systemd has loaded into the system:\n1 systemctl cat app.service Display dependencies To see a unit’s dependency tree:\n1 systemctl list-depnedencies app.service Using shortcuts for important events Put the system into rescue (single-user) mode:\n1 sudo systemctl rescue To halt the system:\n1 sudo systemctl halt To initiate a full shutdown:\n1 sudo systemctl poweroff For restart:\n1 sudo systemctl reboot Listing available targets A list of the available targets:\n1 systemctl list-unit-files --type=target Unlike runlevels, multiple targets can be active at one time. An active target indicates that systemd has attempted to start all of the units tied to the target and has not tried to tear them down again.\nTo see all of the active targets:\n1 systemctl list-units --type=target Default target To find the default target for system:\n1 systemctl get-default To set different default target:\n1 sudo systemctl set-default graphical.target Editing unit files Edit unit file:\n1 sudo systemctl edit app.service This will be a blank file that can be used to override or add directives to the unit definition. A directory will be created within the /etc/systemd/system directory which contains the name of the unit with .d appended. For instance, for the nginx.service, a directory called nginx.service.d will be created.\nWithin this directory, a snippet will be created called override.conf. When the unit is loaded, systemd will, in memory, merge the override snippet with the full unit file. The snippet’s directives will take precedence over those found in the original unit file.\nTo edit the full unit file instead of creating a snippet:\n1 sudo systemctl edit --full nginx.service After editing, deleting file or directory:\n1 sudo systemctl daemon-reload Check unit properties To see the low-level properties of a unit:\n1 systemctl show app.service To see the conflicts:\n1 systemctl show app.service -p conflicts Masking or unmasking units 1 sudo systemctl mask app.service To mark a unit as completely unstartable, automatically or manually, by linking it to /dev/null, we can mask the unit.\nTo unmask:\n1 sudo systemctl unmask app.service ","wordCount":"494","inLanguage":"en","image":"http://localhost:1313/images/cover.png","datePublished":"2023-03-20T11:30:03+06:00","dateModified":"2023-03-20T11:30:03+06:00","author":{"@type":"Person","name":"Loknath Dhar"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:1313/posts/all_about_systemctl/"},"publisher":{"@type":"Organization","name":"Loknath's Log","logo":{"@type":"ImageObject","url":"http://localhost:1313/images/favicon.ico"}}}</script></head><body id=top><header class=header><nav class=nav><div class=logo><a href=http://localhost:1313/ accesskey=h title="#loki (Alt + H)"><img src=http://localhost:1313/apple-touch-icon.png alt aria-label=logo height=23>#loki</a><div class=logo-switches></div></div><ul id=menu><li><a href=http://localhost:1313/search/ title="search (Alt + /)" accesskey=/><span>search</span></a></li><li><a href=http://localhost:1313/tags/ title=tags><span>tags</span></a></li><li><a href=http://localhost:1313/about/ title=about><span>about</span></a></li><li><a href=http://localhost:1313/portfolio/ title=portfolio><span>portfolio</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=http://localhost:1313/>Home</a>&nbsp;»&nbsp;<a href=http://localhost:1313/posts/>Posts</a></div><h1 class="post-title entry-hint-parent">TIL: systemctl!</h1><div class=post-meta><span title='2023-03-20 11:30:03 +0600 +06'>March 20, 2023</span>&nbsp;·&nbsp;Loknath Dhar</div></header><div class=toc><details><summary accesskey=c title="(Alt + C)"><span class=details>Table of Contents</span></summary><div class=inner><nav id=TableOfContents><ul><li><ul><li><a href=#checking-status>Checking status</a></li><li><a href=#system-state-overview>System state overview</a></li></ul></li></ul><ul><li><ul><li><a href=#show-a-unit-file>Show a unit file</a></li><li><a href=#display-dependencies>Display dependencies</a></li><li><a href=#using-shortcuts-for-important-events>Using shortcuts for important events</a></li><li><a href=#listing-available-targets>Listing available targets</a></li><li><a href=#default-target>Default target</a></li><li><a href=#editing-unit-files>Editing unit files</a></li><li><a href=#check-unit-properties>Check unit properties</a></li><li><a href=#masking-or-unmasking-units>Masking or unmasking units</a></li></ul></li></ul></nav></div></details></div><div class=post-content><h1 id=service-management>Service management<a hidden class=anchor aria-hidden=true href=#service-management>#</a></h1><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo systemctl start app.service
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>sudo systemctl stop app.service
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>sudo systemctl restart app.service
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>sudo systemctl reload app.service
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>sudo systemctl reload-or-restart app.service
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>sudo systemctl <span class=nb>enable</span> app.service
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>sudo systemctl disable app.service
+</span></span></code></pre></td></tr></table></div></div><h3 id=checking-status>Checking status<a hidden class=anchor aria-hidden=true href=#checking-status>#</a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>systemctl status app.service
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>systemctl is-active app.service
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>systemctl is-enabled app.service
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>systemctl is-failed app.service
+</span></span></code></pre></td></tr></table></div></div><h3 id=system-state-overview>System state overview<a hidden class=anchor aria-hidden=true href=#system-state-overview>#</a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># see a list of active units</span>
+</span></span><span class=line><span class=cl>systemctl list-units
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>systemctl <span class=c1># returns same as above</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>systemctl list-units --all
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>systemctl list-units --all --state<span class=o>=</span>inactive
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>systemctl list-units --type<span class=o>=</span>service
+</span></span></code></pre></td></tr></table></div></div><p>To see every available units in the system paths (<em>including those that <code>systemd</code> has not attempted to load</em>):</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>systemctl list-unit-files
+</span></span></code></pre></td></tr></table></div></div><p>The state:</p><ul><li><code>enabled</code></li><li><code>disabled</code></li><li><code>static</code>: means that the unit files does not contain an <code>install</code> section, which is used to enable a unit.</li><li><code>masked</code>:</li></ul><h1 id=unit-management>Unit management<a hidden class=anchor aria-hidden=true href=#unit-management>#</a></h1><h3 id=show-a-unit-file>Show a unit file<a hidden class=anchor aria-hidden=true href=#show-a-unit-file>#</a></h3><p>To display the unit file that <code>systemd</code> has loaded into the system:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>systemctl cat app.service
+</span></span></code></pre></td></tr></table></div></div><h3 id=display-dependencies>Display dependencies<a hidden class=anchor aria-hidden=true href=#display-dependencies>#</a></h3><p>To see a unit&rsquo;s dependency tree:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>systemctl list-depnedencies app.service
+</span></span></code></pre></td></tr></table></div></div><h3 id=using-shortcuts-for-important-events>Using shortcuts for important events<a hidden class=anchor aria-hidden=true href=#using-shortcuts-for-important-events>#</a></h3><p>Put the system into rescue (<em>single-user</em>) mode:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo systemctl rescue
+</span></span></code></pre></td></tr></table></div></div><p>To halt the system:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo systemctl halt
+</span></span></code></pre></td></tr></table></div></div><p>To initiate a full shutdown:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo systemctl poweroff
+</span></span></code></pre></td></tr></table></div></div><p>For restart:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo systemctl reboot
+</span></span></code></pre></td></tr></table></div></div><h3 id=listing-available-targets>Listing available targets<a hidden class=anchor aria-hidden=true href=#listing-available-targets>#</a></h3><p>A list of the available targets:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>systemctl list-unit-files --type<span class=o>=</span>target
+</span></span></code></pre></td></tr></table></div></div><p>Unlike runlevels, multiple targets can be active at one time. An active target indicates that <code>systemd</code> has attempted to start all of the units tied to the target and has not tried to tear them down again.</p><p>To see all of the active targets:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>systemctl list-units --type<span class=o>=</span>target
+</span></span></code></pre></td></tr></table></div></div><h3 id=default-target>Default target<a hidden class=anchor aria-hidden=true href=#default-target>#</a></h3><p>To find the default target for system:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>systemctl get-default
+</span></span></code></pre></td></tr></table></div></div><p>To set different default target:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo systemctl set-default graphical.target
+</span></span></code></pre></td></tr></table></div></div><h3 id=editing-unit-files>Editing unit files<a hidden class=anchor aria-hidden=true href=#editing-unit-files>#</a></h3><p>Edit unit file:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo systemctl edit app.service
+</span></span></code></pre></td></tr></table></div></div><p>This will be a blank file that can be used to override or add directives to the unit definition. A directory will be created within the <code>/etc/systemd/system</code> directory which contains the name of the unit with .d appended. For instance, for the <code>nginx.service</code>, a directory called <code>nginx.service.d</code> will be created.</p><p>Within this directory, a snippet will be created called override.conf. When the unit is loaded, <code>systemd</code> will, in memory, merge the override snippet with the full unit file. The snippet’s directives will take precedence over those found in the original unit file.</p><p>To edit the full unit file instead of creating a snippet:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo systemctl edit --full nginx.service
+</span></span></code></pre></td></tr></table></div></div><p>After editing, deleting file or directory:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo systemctl daemon-reload
+</span></span></code></pre></td></tr></table></div></div><h3 id=check-unit-properties>Check unit properties<a hidden class=anchor aria-hidden=true href=#check-unit-properties>#</a></h3><p>To see the low-level properties of a unit:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>systemctl show app.service
+</span></span></code></pre></td></tr></table></div></div><p>To see the conflicts:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>systemctl show app.service -p conflicts
+</span></span></code></pre></td></tr></table></div></div><h3 id=masking-or-unmasking-units>Masking or unmasking units<a hidden class=anchor aria-hidden=true href=#masking-or-unmasking-units>#</a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo systemctl mask app.service
+</span></span></code></pre></td></tr></table></div></div><p>To mark a unit as completely unstartable, automatically or manually, by linking it to /dev/null, we can mask the unit.</p><p>To unmask:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo systemctl unmask app.service
+</span></span></code></pre></td></tr></table></div></div></div><footer class=post-footer><ul class=post-tags><li><a href=http://localhost:1313/tags/til/>TIL</a></li></ul><nav class=paginav><a class=prev href=http://localhost:1313/posts/all-about-journalctl/><span class=title>« Prev</span><br><span>TIL: journalctl!</span>
+</a><a class=next href=http://localhost:1313/posts/set-up-ssl-for-solrcloud/><span class=title>Next »</span><br><span>Set up SSL for SolrCloud</span></a></nav></footer></article></main><footer class=footer><span>&copy; 2025 <a href=http://localhost:1313/>Loknath Dhar</a></span> ·</footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

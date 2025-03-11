@@ -1,0 +1,95 @@
+<!doctype html><html lang=en dir=auto><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Nginx Logging | Loknath's Log</title>
+<meta name=keywords content="nginx"><meta name=description content="Nginx uses a few different directives to control system logging. The one included in the core module is called error_log.
+error_log directive
+Syntax: error_log log_file log_level.
+
+log_file: specifies the file where the logs will be written.
+log_level: specifies the lowest level of logging to be recorded.
+
+Logging levels
+
+emerg: emergency situations.
+alert:
+crit:
+error:
+warn:
+notice:
+info
+debug:
+
+Example:
+
+
+1
+2
+3
+4
+
+
+error_log /var/log/nginx/error.log crit;
+
+# Don't log anything
+error_log /dev/null crit;
+
+
+error_log is part of the core module; the access_log is part of the HttpLogModule. This provides the ability to customise the log."><meta name=author content="Loknath Dhar"><link rel=canonical href=http://localhost:1313/posts/nginx_logging/><meta name=google-site-verification content="XYZabc"><meta name=yandex-verification content="XYZabc"><meta name=msvalidate.01 content="XYZabc"><link crossorigin=anonymous href=/assets/css/stylesheet.css rel="preload stylesheet" as=style><link rel=icon href=http://localhost:1313/images/favicon.ico><link rel=icon type=image/png sizes=16x16 href=http://localhost:1313/images/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=http://localhost:1313/images/favicon-32x32.png><link rel=apple-touch-icon href=http://localhost:1313/images/apple-touch-icon.png><link rel=mask-icon href=http://localhost:1313/%3Clink%20/%20abs%20url%3E><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=en href=http://localhost:1313/posts/nginx_logging/><noscript><style>#theme-toggle,.top-link{display:none}</style></noscript><meta property="og:url" content="http://localhost:1313/posts/nginx_logging/"><meta property="og:site_name" content="Loknath's Log"><meta property="og:title" content="Nginx Logging"><meta property="og:description" content="Nginx uses a few different directives to control system logging. The one included in the core module is called error_log.
+error_log directive Syntax: error_log log_file log_level.
+log_file: specifies the file where the logs will be written. log_level: specifies the lowest level of logging to be recorded. Logging levels emerg: emergency situations. alert: crit: error: warn: notice: info debug: Example:
+1 2 3 4 error_log /var/log/nginx/error.log crit; # Don't log anything error_log /dev/null crit; error_log is part of the core module; the access_log is part of the HttpLogModule. This provides the ability to customise the log."><meta property="og:locale" content="en-us"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2023-05-20T11:30:03+06:00"><meta property="article:modified_time" content="2023-05-20T11:30:03+06:00"><meta property="article:tag" content="Nginx"><meta property="og:image" content="http://localhost:1313/images/cover.png"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="http://localhost:1313/images/cover.png"><meta name=twitter:title content="Nginx Logging"><meta name=twitter:description content="Nginx uses a few different directives to control system logging. The one included in the core module is called error_log.
+error_log directive
+Syntax: error_log log_file log_level.
+
+log_file: specifies the file where the logs will be written.
+log_level: specifies the lowest level of logging to be recorded.
+
+Logging levels
+
+emerg: emergency situations.
+alert:
+crit:
+error:
+warn:
+notice:
+info
+debug:
+
+Example:
+
+
+1
+2
+3
+4
+
+
+error_log /var/log/nginx/error.log crit;
+
+# Don't log anything
+error_log /dev/null crit;
+
+
+error_log is part of the core module; the access_log is part of the HttpLogModule. This provides the ability to customise the log."><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"http://localhost:1313/posts/"},{"@type":"ListItem","position":2,"name":"Nginx Logging","item":"http://localhost:1313/posts/nginx_logging/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Nginx Logging","name":"Nginx Logging","description":"Nginx uses a few different directives to control system logging. The one included in the core module is called error_log.\nerror_log directive Syntax: error_log log_file log_level.\nlog_file: specifies the file where the logs will be written. log_level: specifies the lowest level of logging to be recorded. Logging levels emerg: emergency situations. alert: crit: error: warn: notice: info debug: Example:\n1 2 3 4 error_log /var/log/nginx/error.log crit; # Don\u0026#39;t log anything error_log /dev/null crit; error_log is part of the core module; the access_log is part of the HttpLogModule. This provides the ability to customise the log.\n","keywords":["nginx"],"articleBody":"Nginx uses a few different directives to control system logging. The one included in the core module is called error_log.\nerror_log directive Syntax: error_log log_file log_level.\nlog_file: specifies the file where the logs will be written. log_level: specifies the lowest level of logging to be recorded. Logging levels emerg: emergency situations. alert: crit: error: warn: notice: info debug: Example:\n1 2 3 4 error_log /var/log/nginx/error.log crit; # Don't log anything error_log /dev/null crit; error_log is part of the core module; the access_log is part of the HttpLogModule. This provides the ability to customise the log.\nlog_format directive The log_format directive is used to describe the format of a log entry using the plain text and variables.\nGeneral Syntax:\n1 log_format format_name string_describing_formatting; 1 2 3 log_format combined '$remote_addr - $remote_user [$time_local] ' '\"$request\" $status $body_bytes_sent ' '\"$http_referer\" \"$http_user_agent\"'; combined comes predefined with Nginx.\naccess_log directive Syntax:\n1 access_log /path-to-location [ format_of_log buffer_size ]; Specify compression of log file by adding gzip:\n1 access_log /path-to-log-location format_of_log gzip; Managing a log rotation The command that actually rotates the logs is kill -USR1 /var/run/nginx.pid. It sends signal to reload its log files.\nLog rotation with logrotate The logrotate application is used to rotate logs.\n1 vim /etc/logrotate.d/nginx ","wordCount":"204","inLanguage":"en","image":"http://localhost:1313/images/cover.png","datePublished":"2023-05-20T11:30:03+06:00","dateModified":"2023-05-20T11:30:03+06:00","author":{"@type":"Person","name":"Loknath Dhar"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:1313/posts/nginx_logging/"},"publisher":{"@type":"Organization","name":"Loknath's Log","logo":{"@type":"ImageObject","url":"http://localhost:1313/images/favicon.ico"}}}</script></head><body id=top><header class=header><nav class=nav><div class=logo><a href=http://localhost:1313/ accesskey=h title="#loki (Alt + H)"><img src=http://localhost:1313/apple-touch-icon.png alt aria-label=logo height=23>#loki</a><div class=logo-switches></div></div><ul id=menu><li><a href=http://localhost:1313/search/ title="search (Alt + /)" accesskey=/><span>search</span></a></li><li><a href=http://localhost:1313/categories/ title=categories><span>categories</span></a></li><li><a href=http://localhost:1313/tags/ title=tags><span>tags</span></a></li><li><a href=http://localhost:1313/about/ title=about><span>about</span></a></li><li><a href=http://localhost:1313/portfolio/ title=portfolio><span>portfolio</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=http://localhost:1313/>Home</a>&nbsp;»&nbsp;<a href=http://localhost:1313/posts/>Posts</a></div><h1 class="post-title entry-hint-parent">Nginx Logging</h1><div class=post-meta><span title='2023-05-20 11:30:03 +0600 +06'>May 20, 2023</span>&nbsp;·&nbsp;Loknath Dhar</div></header><div class=toc><details><summary accesskey=c title="(Alt + C)"><span class=details>Table of Contents</span></summary><div class=inner><nav id=TableOfContents><ul><li><ul><li><a href=#logging-levels>Logging levels</a></li></ul></li></ul><ul><li><ul><li><a href=#managing-a-log-rotation>Managing a log rotation</a></li><li><a href=#log-rotation-with-logrotate>Log rotation with <code>logrotate</code></a></li></ul></li></ul></nav></div></details></div><div class=post-content><p>Nginx uses a few different directives to control system logging. The one included in the core module is called <code>error_log</code>.</p><h1 id=error_log-directive><code>error_log</code> directive<a hidden class=anchor aria-hidden=true href=#error_log-directive>#</a></h1><p>Syntax: <code>error_log log_file log_level</code>.</p><ul><li><code>log_file</code>: specifies the file where the logs will be written.</li><li><code>log_level</code>: specifies the lowest level of logging to be recorded.</li></ul><h3 id=logging-levels>Logging levels<a hidden class=anchor aria-hidden=true href=#logging-levels>#</a></h3><ul><li><code>emerg</code>: emergency situations.</li><li><code>alert</code>:</li><li><code>crit</code>:</li><li><code>error</code>:</li><li><code>warn</code>:</li><li><code>notice</code>:</li><li><code>info</code></li><li><code>debug</code>:</li></ul><p>Example:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>error_log /var/log/nginx/error.log crit<span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Don&#39;t log anything</span>
+</span></span><span class=line><span class=cl>error_log /dev/null crit<span class=p>;</span>
+</span></span></code></pre></td></tr></table></div></div><p><code>error_log</code> is part of the core module; the <code>access_log</code> is part of the <code>HttpLogModule</code>. This provides the ability to customise the log.</p><h1 id=log_format-directive><code>log_format</code> directive<a hidden class=anchor aria-hidden=true href=#log_format-directive>#</a></h1><p>The <code>log_format</code> directive is used to describe the format of a log entry using the plain text and variables.</p><p>General Syntax:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>log_format format_name string_describing_formatting<span class=p>;</span>
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>log_format combined <span class=s1>&#39;$remote_addr - $remote_user [$time_local]  &#39;</span>
+</span></span><span class=line><span class=cl>      <span class=s1>&#39;&#34;$request&#34; $status $body_bytes_sent &#39;</span>
+</span></span><span class=line><span class=cl>      <span class=s1>&#39;&#34;$http_referer&#34; &#34;$http_user_agent&#34;&#39;</span><span class=p>;</span>
+</span></span></code></pre></td></tr></table></div></div><blockquote><p><code>combined</code> comes predefined with Nginx.</p></blockquote><h1 id=access_log-directive><code>access_log</code> directive<a hidden class=anchor aria-hidden=true href=#access_log-directive>#</a></h1><p>Syntax:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>access_log /path-to-location <span class=o>[</span> format_of_log buffer_size <span class=o>]</span><span class=p>;</span>
+</span></span></code></pre></td></tr></table></div></div><p>Specify compression of log file by adding <code>gzip</code>:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>access_log /path-to-log-location format_of_log gzip<span class=p>;</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=managing-a-log-rotation>Managing a log rotation<a hidden class=anchor aria-hidden=true href=#managing-a-log-rotation>#</a></h3><p>The command that actually rotates the logs is <code>kill -USR1 /var/run/nginx.pid</code>. It sends signal to reload its log files.</p><h3 id=log-rotation-with-logrotate>Log rotation with <code>logrotate</code><a hidden class=anchor aria-hidden=true href=#log-rotation-with-logrotate>#</a></h3><p>The <code>logrotate</code> application is used to rotate logs.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>vim /etc/logrotate.d/nginx
+</span></span></code></pre></td></tr></table></div></div></div><footer class=post-footer><ul class=post-tags><li><a href=http://localhost:1313/tags/nginx/>Nginx</a></li></ul><nav class=paginav><a class=prev href=http://localhost:1313/posts/be-better-version/><span class=title>« Prev</span><br><span>📊 Be better..</span>
+</a><a class=next href=http://localhost:1313/posts/all_about_logrotate/><span class=title>Next »</span><br><span>Let's learn: logrotate!</span></a></nav></footer></article></main><footer class=footer><span>&copy; 2025 <a href=http://localhost:1313/>Loknath Dhar</a></span> ·</footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

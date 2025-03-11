@@ -1,0 +1,1189 @@
+<!doctype html><html lang=en dir=auto><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Learning Git | Loknath's Log</title>
+<meta name=keywords content="cheatsheet,resources"><meta name=description content='SCM : Source Control Management.
+VCS: Version Control System.
+
+All of the content here is for command line, as I am very comfortable with terminal [and of course Linux].
+Basic git syntax: program | action | destination.
+For example: git | add | .
+Configure git
+
+
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+
+
+# set your name
+$ git config user.name "user-name"
+
+# set your email
+$ git config user.email "user-email@example.com"
+
+
+# set global user name
+$ git config --global user.name "username"
+
+# set global user email
+$ git config --global user.email "user-email"
+
+
+Basic
+
+
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+
+
+# to check git version
+$ git --version
+
+# initializing git repository
+$ git init
+
+# check status of the git repo
+$ git status
+
+# clone remote repo to your machine
+$ git clone [url]
+
+# Add all files at once
+$ git add .
+
+# Add specific files by name
+$ git add {file-name/path-to-file}
+
+# commit all the files
+$ git commit -m "messages you want to write"
+
+# to correct/amend commit message
+$ git commit --amend -m "your message"
+
+# commit with title & description
+$ git commit -m "Title" -m "Description..."
+
+# to view specific commit
+$ git show {commit-ID}
+
+# to update every change
+$ git add -u
+
+# to remove file
+$ git rm {file-name}
+
+# remove file from git staging area
+$ git rm --cached {file-name}
+
+# to untrack all files in git-ignore
+$ git rm -r --cached .
+
+# restore staged file
+$ git restored -staged {file-name}
+
+# configure git to ignore specific file
+$ echo {file-name} >> .gitignore
+
+# to move or rename file
+$ git mv {old-file-name} {new-file-name}
+
+#  to restore file from last commit
+$ git checkout -- {file-name}
+
+# to restore all file from last commit
+$ git checkout -- .
+
+# to restore file from a commit and move to current branch
+$ git checkout {commit-ID} -- {file-name}
+
+# check help menu
+$ git help log
+
+
+Update & Delete
+
+
+1
+2
+3
+4
+5
+6
+7
+8
+
+
+# to test delete untracked file
+$ git clean -n
+
+# to delete untracked file
+$ git clean -f
+
+# to unstage / undo adds
+$ git reset HEAD {file-name}
+
+
+Git Log
+
+
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+
+
+# list of git log
+$ git log
+
+# view logs in oneline (awesome!)
+$ git log --oneline
+
+# list of changed files
+$ git log --name-only
+
+# to view commit log in one line with full SHA-1 format
+$ git log --format=oneline
+
+# to view changes
+$ git log -p
+
+# to view commits of a specific file
+$ git log {file-name}
+
+# to view all commits of a specific file
+$ git log -p {file-name}
+
+# to view status & summary of commits
+$ git log --stat
+$ git log --stat --summary
+
+# to view commit history in graph
+$ git log --graph
+
+# to view summary of commit history in graph
+$ git log --oneline --graph --all --decorate
+
+# view previous commit history
+$ git log --graph --decorate
+
+
+Git Branch
+
+
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+
+
+# create a new branch
+$ git branch {branch-name}
+
+# switch to an existing branch
+$ git checkout {branch-name}
+$ git switch {branch-name}    # new
+
+# create a new branch and swithc to it
+$ git checkout -b {branch-name}
+
+# rename branch
+$ git branch -m {branch-name} {new-branch-name}
+$ git branch --move {old-branch-name} {new-branch-name}
+
+# to show all branches that are merged into current branch
+$ git branch --merged
+
+# delete a branch
+$ git branch -d {branch-name}
+
+# list all branches
+$ git branch
+
+# view all branches - local & remote
+$ git branch -a
+
+# to remove remote branch
+$ git push --delete origin {branch-name}
+
+# to delete unmerged branch
+$ git branch -D {branch-name-to-delete}
+
+
+
+HEAD is where we right now in the repository. The HEAD points to the last commit in the branch we  are currently on.'><meta name=author content="Loknath Dhar"><link rel=canonical href=http://localhost:1313/posts/all_about_git/><meta name=google-site-verification content="XYZabc"><meta name=yandex-verification content="XYZabc"><meta name=msvalidate.01 content="XYZabc"><link crossorigin=anonymous href=/assets/css/stylesheet.css rel="preload stylesheet" as=style><link rel=icon href=http://localhost:1313/images/favicon.ico><link rel=icon type=image/png sizes=16x16 href=http://localhost:1313/images/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=http://localhost:1313/images/favicon-32x32.png><link rel=apple-touch-icon href=http://localhost:1313/images/apple-touch-icon.png><link rel=mask-icon href=http://localhost:1313/%3Clink%20/%20abs%20url%3E><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=en href=http://localhost:1313/posts/all_about_git/><noscript><style>#theme-toggle,.top-link{display:none}</style></noscript><meta property="og:url" content="http://localhost:1313/posts/all_about_git/"><meta property="og:site_name" content="Loknath's Log"><meta property="og:title" content="Learning Git"><meta property="og:description" content='SCM : Source Control Management.
+VCS: Version Control System.
+All of the content here is for command line, as I am very comfortable with terminal [and of course Linux].
+Basic git syntax: program | action | destination.
+For example: git | add | .
+Configure git 1 2 3 4 5 6 7 8 9 10 11 12 # set your name $ git config user.name "user-name" # set your email $ git config user.email "user-email@example.com" # set global user name $ git config --global user.name "username" # set global user email $ git config --global user.email "user-email" Basic 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 # to check git version $ git --version # initializing git repository $ git init # check status of the git repo $ git status # clone remote repo to your machine $ git clone [url] # Add all files at once $ git add . # Add specific files by name $ git add {file-name/path-to-file} # commit all the files $ git commit -m "messages you want to write" # to correct/amend commit message $ git commit --amend -m "your message" # commit with title & description $ git commit -m "Title" -m "Description..." # to view specific commit $ git show {commit-ID} # to update every change $ git add -u # to remove file $ git rm {file-name} # remove file from git staging area $ git rm --cached {file-name} # to untrack all files in git-ignore $ git rm -r --cached . # restore staged file $ git restored -staged {file-name} # configure git to ignore specific file $ echo {file-name} >> .gitignore # to move or rename file $ git mv {old-file-name} {new-file-name} # to restore file from last commit $ git checkout -- {file-name} # to restore all file from last commit $ git checkout -- . # to restore file from a commit and move to current branch $ git checkout {commit-ID} -- {file-name} # check help menu $ git help log Update & Delete 1 2 3 4 5 6 7 8 # to test delete untracked file $ git clean -n # to delete untracked file $ git clean -f # to unstage / undo adds $ git reset HEAD {file-name} Git Log 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 # list of git log $ git log # view logs in oneline (awesome!) $ git log --oneline # list of changed files $ git log --name-only # to view commit log in one line with full SHA-1 format $ git log --format=oneline # to view changes $ git log -p # to view commits of a specific file $ git log {file-name} # to view all commits of a specific file $ git log -p {file-name} # to view status & summary of commits $ git log --stat $ git log --stat --summary # to view commit history in graph $ git log --graph # to view summary of commit history in graph $ git log --oneline --graph --all --decorate # view previous commit history $ git log --graph --decorate Git Branch 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 # create a new branch $ git branch {branch-name} # switch to an existing branch $ git checkout {branch-name} $ git switch {branch-name} # new # create a new branch and swithc to it $ git checkout -b {branch-name} # rename branch $ git branch -m {branch-name} {new-branch-name} $ git branch --move {old-branch-name} {new-branch-name} # to show all branches that are merged into current branch $ git branch --merged # delete a branch $ git branch -d {branch-name} # list all branches $ git branch # view all branches - local & remote $ git branch -a # to remove remote branch $ git push --delete origin {branch-name} # to delete unmerged branch $ git branch -D {branch-name-to-delete} HEAD is where we right now in the repository. The HEAD points to the last commit in the branch we are currently on.'><meta property="og:locale" content="en-us"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2022-05-31T00:00:00+00:00"><meta property="article:modified_time" content="2022-05-31T00:00:00+00:00"><meta property="article:tag" content="Cheatsheet"><meta property="article:tag" content="Resources"><meta property="og:image" content="http://localhost:1313/images/cover.png"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="http://localhost:1313/images/cover.png"><meta name=twitter:title content="Learning Git"><meta name=twitter:description content='SCM : Source Control Management.
+VCS: Version Control System.
+
+All of the content here is for command line, as I am very comfortable with terminal [and of course Linux].
+Basic git syntax: program | action | destination.
+For example: git | add | .
+Configure git
+
+
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+
+
+# set your name
+$ git config user.name "user-name"
+
+# set your email
+$ git config user.email "user-email@example.com"
+
+
+# set global user name
+$ git config --global user.name "username"
+
+# set global user email
+$ git config --global user.email "user-email"
+
+
+Basic
+
+
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+
+
+# to check git version
+$ git --version
+
+# initializing git repository
+$ git init
+
+# check status of the git repo
+$ git status
+
+# clone remote repo to your machine
+$ git clone [url]
+
+# Add all files at once
+$ git add .
+
+# Add specific files by name
+$ git add {file-name/path-to-file}
+
+# commit all the files
+$ git commit -m "messages you want to write"
+
+# to correct/amend commit message
+$ git commit --amend -m "your message"
+
+# commit with title & description
+$ git commit -m "Title" -m "Description..."
+
+# to view specific commit
+$ git show {commit-ID}
+
+# to update every change
+$ git add -u
+
+# to remove file
+$ git rm {file-name}
+
+# remove file from git staging area
+$ git rm --cached {file-name}
+
+# to untrack all files in git-ignore
+$ git rm -r --cached .
+
+# restore staged file
+$ git restored -staged {file-name}
+
+# configure git to ignore specific file
+$ echo {file-name} >> .gitignore
+
+# to move or rename file
+$ git mv {old-file-name} {new-file-name}
+
+#  to restore file from last commit
+$ git checkout -- {file-name}
+
+# to restore all file from last commit
+$ git checkout -- .
+
+# to restore file from a commit and move to current branch
+$ git checkout {commit-ID} -- {file-name}
+
+# check help menu
+$ git help log
+
+
+Update & Delete
+
+
+1
+2
+3
+4
+5
+6
+7
+8
+
+
+# to test delete untracked file
+$ git clean -n
+
+# to delete untracked file
+$ git clean -f
+
+# to unstage / undo adds
+$ git reset HEAD {file-name}
+
+
+Git Log
+
+
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+
+
+# list of git log
+$ git log
+
+# view logs in oneline (awesome!)
+$ git log --oneline
+
+# list of changed files
+$ git log --name-only
+
+# to view commit log in one line with full SHA-1 format
+$ git log --format=oneline
+
+# to view changes
+$ git log -p
+
+# to view commits of a specific file
+$ git log {file-name}
+
+# to view all commits of a specific file
+$ git log -p {file-name}
+
+# to view status & summary of commits
+$ git log --stat
+$ git log --stat --summary
+
+# to view commit history in graph
+$ git log --graph
+
+# to view summary of commit history in graph
+$ git log --oneline --graph --all --decorate
+
+# view previous commit history
+$ git log --graph --decorate
+
+
+Git Branch
+
+
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+
+
+# create a new branch
+$ git branch {branch-name}
+
+# switch to an existing branch
+$ git checkout {branch-name}
+$ git switch {branch-name}    # new
+
+# create a new branch and swithc to it
+$ git checkout -b {branch-name}
+
+# rename branch
+$ git branch -m {branch-name} {new-branch-name}
+$ git branch --move {old-branch-name} {new-branch-name}
+
+# to show all branches that are merged into current branch
+$ git branch --merged
+
+# delete a branch
+$ git branch -d {branch-name}
+
+# list all branches
+$ git branch
+
+# view all branches - local & remote
+$ git branch -a
+
+# to remove remote branch
+$ git push --delete origin {branch-name}
+
+# to delete unmerged branch
+$ git branch -D {branch-name-to-delete}
+
+
+
+HEAD is where we right now in the repository. The HEAD points to the last commit in the branch we  are currently on.'><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"http://localhost:1313/posts/"},{"@type":"ListItem","position":2,"name":"Learning Git","item":"http://localhost:1313/posts/all_about_git/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Learning Git","name":"Learning Git","description":"SCM : Source Control Management.\nVCS: Version Control System.\nAll of the content here is for command line, as I am very comfortable with terminal [and of course Linux].\nBasic git syntax: program | action | destination.\nFor example: git | add | .\nConfigure git 1 2 3 4 5 6 7 8 9 10 11 12 # set your name $ git config user.name \u0026#34;user-name\u0026#34; # set your email $ git config user.email \u0026#34;user-email@example.com\u0026#34; # set global user name $ git config --global user.name \u0026#34;username\u0026#34; # set global user email $ git config --global user.email \u0026#34;user-email\u0026#34; Basic 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 # to check git version $ git --version # initializing git repository $ git init # check status of the git repo $ git status # clone remote repo to your machine $ git clone [url] # Add all files at once $ git add . # Add specific files by name $ git add {file-name/path-to-file} # commit all the files $ git commit -m \u0026#34;messages you want to write\u0026#34; # to correct/amend commit message $ git commit --amend -m \u0026#34;your message\u0026#34; # commit with title \u0026amp; description $ git commit -m \u0026#34;Title\u0026#34; -m \u0026#34;Description...\u0026#34; # to view specific commit $ git show {commit-ID} # to update every change $ git add -u # to remove file $ git rm {file-name} # remove file from git staging area $ git rm --cached {file-name} # to untrack all files in git-ignore $ git rm -r --cached . # restore staged file $ git restored -staged {file-name} # configure git to ignore specific file $ echo {file-name} \u0026gt;\u0026gt; .gitignore # to move or rename file $ git mv {old-file-name} {new-file-name} # to restore file from last commit $ git checkout -- {file-name} # to restore all file from last commit $ git checkout -- . # to restore file from a commit and move to current branch $ git checkout {commit-ID} -- {file-name} # check help menu $ git help log Update \u0026amp; Delete 1 2 3 4 5 6 7 8 # to test delete untracked file $ git clean -n # to delete untracked file $ git clean -f # to unstage / undo adds $ git reset HEAD {file-name} Git Log 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 # list of git log $ git log # view logs in oneline (awesome!) $ git log --oneline # list of changed files $ git log --name-only # to view commit log in one line with full SHA-1 format $ git log --format=oneline # to view changes $ git log -p # to view commits of a specific file $ git log {file-name} # to view all commits of a specific file $ git log -p {file-name} # to view status \u0026amp; summary of commits $ git log --stat $ git log --stat --summary # to view commit history in graph $ git log --graph # to view summary of commit history in graph $ git log --oneline --graph --all --decorate # view previous commit history $ git log --graph --decorate Git Branch 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 # create a new branch $ git branch {branch-name} # switch to an existing branch $ git checkout {branch-name} $ git switch {branch-name} # new # create a new branch and swithc to it $ git checkout -b {branch-name} # rename branch $ git branch -m {branch-name} {new-branch-name} $ git branch --move {old-branch-name} {new-branch-name} # to show all branches that are merged into current branch $ git branch --merged # delete a branch $ git branch -d {branch-name} # list all branches $ git branch # view all branches - local \u0026amp; remote $ git branch -a # to remove remote branch $ git push --delete origin {branch-name} # to delete unmerged branch $ git branch -D {branch-name-to-delete} HEAD is where we right now in the repository. The HEAD points to the last commit in the branch we are currently on.\n","keywords":["cheatsheet","resources"],"articleBody":"SCM : Source Control Management.\nVCS: Version Control System.\nAll of the content here is for command line, as I am very comfortable with terminal [and of course Linux].\nBasic git syntax: program | action | destination.\nFor example: git | add | .\nConfigure git 1 2 3 4 5 6 7 8 9 10 11 12 # set your name $ git config user.name \"user-name\" # set your email $ git config user.email \"user-email@example.com\" # set global user name $ git config --global user.name \"username\" # set global user email $ git config --global user.email \"user-email\" Basic 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 # to check git version $ git --version # initializing git repository $ git init # check status of the git repo $ git status # clone remote repo to your machine $ git clone [url] # Add all files at once $ git add . # Add specific files by name $ git add {file-name/path-to-file} # commit all the files $ git commit -m \"messages you want to write\" # to correct/amend commit message $ git commit --amend -m \"your message\" # commit with title \u0026 description $ git commit -m \"Title\" -m \"Description...\" # to view specific commit $ git show {commit-ID} # to update every change $ git add -u # to remove file $ git rm {file-name} # remove file from git staging area $ git rm --cached {file-name} # to untrack all files in git-ignore $ git rm -r --cached . # restore staged file $ git restored -staged {file-name} # configure git to ignore specific file $ echo {file-name} \u003e\u003e .gitignore # to move or rename file $ git mv {old-file-name} {new-file-name} # to restore file from last commit $ git checkout -- {file-name} # to restore all file from last commit $ git checkout -- . # to restore file from a commit and move to current branch $ git checkout {commit-ID} -- {file-name} # check help menu $ git help log Update \u0026 Delete 1 2 3 4 5 6 7 8 # to test delete untracked file $ git clean -n # to delete untracked file $ git clean -f # to unstage / undo adds $ git reset HEAD {file-name} Git Log 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 # list of git log $ git log # view logs in oneline (awesome!) $ git log --oneline # list of changed files $ git log --name-only # to view commit log in one line with full SHA-1 format $ git log --format=oneline # to view changes $ git log -p # to view commits of a specific file $ git log {file-name} # to view all commits of a specific file $ git log -p {file-name} # to view status \u0026 summary of commits $ git log --stat $ git log --stat --summary # to view commit history in graph $ git log --graph # to view summary of commit history in graph $ git log --oneline --graph --all --decorate # view previous commit history $ git log --graph --decorate Git Branch 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 # create a new branch $ git branch {branch-name} # switch to an existing branch $ git checkout {branch-name} $ git switch {branch-name} # new # create a new branch and swithc to it $ git checkout -b {branch-name} # rename branch $ git branch -m {branch-name} {new-branch-name} $ git branch --move {old-branch-name} {new-branch-name} # to show all branches that are merged into current branch $ git branch --merged # delete a branch $ git branch -d {branch-name} # list all branches $ git branch # view all branches - local \u0026 remote $ git branch -a # to remove remote branch $ git push --delete origin {branch-name} # to delete unmerged branch $ git branch -D {branch-name-to-delete} HEAD is where we right now in the repository. The HEAD points to the last commit in the branch we are currently on.\nGit Merge There are two types of merging:\nFast-forward-merge: It happens when current branch has no extra commits compared to the branch we’re merging.\nNo-fast-forward-merge: If the master branch has new changes which other branch doesn’t have, git will commit no-fast-forward merge.\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 # first checkout to master branch $ git checkout master # merging $ git merge {branch-name} # to merge on master branch (only if fast forward) $ git merge --ff-only {branch-name} # merging on master branch (forcing a new commit) $ git merge --no-ff {branch-name} # to stop merge (in case of conflicts) $ git merge --abort $ git reset --merge # prior to v1.7.4 # to undo local merge $ git reset --hard {branch-name} # to merge a specific commit $ git cherry-pick {commit-ID} # rebase $ git checkout {branch-name} \u003e\u003e git rebase main # to cancel rebase $ git rebase --abort # Squash multiple commit to one commit $ git rebase -i HEAD~3 # to squash merge in one commit $ git merge --squash {branch-name} # (and commit afterwards) Git Stash 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 # save into stash $ git stash save \"message\" $ git stash # show list of the stash $ git stash list # view all stash $ git stash show # show status of a specific stash $ git stash show {stash-ID} # show changes on stash $ git stash show -p {stash-ID} # to bring all stash $ git stash pop # bring/get back to specific stash $ git stash pop {stash-ID} # to use specific stash without dropping $ git stash apply {stash-ID} # use custom stash and index $ git stash apply --index # create new branch from stash $ git stash branch {new-branch} # to delete 1st item of stash list $ git stash drop # to delete specific stash from stash list $ git stash drop {stash-ID} # to delete the whole stash $ git stash clear Reflog I have nothing to say about this section. Ultimate weapon\n1 2 3 git reflog git reset --hard {ssh-link} Git Compare 1 2 3 4 5 6 7 8 9 10 11 # show difference $ git diff {commit-ID} {commit-ID} # compare modified files and highlight changes $ git diff --color-words {file-name} # view the difference between last commit and staged version $ git diff --staged # to compare branches $ git diff main..{branch-name} Working with remote repository 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 # initilizing remote repository $ git remote add origin {connection-string.git} # list remote repository $ git remote -v # pushing repository $ git push origin master/main # clone repo $ git clone {ssh-link} # update the repo $ git fetch origin master # fetch \u0026 merge remote changes $ git pull origin master Using SSH 1 2 git remote -v git remote set-url origin git@github.com:username/repo-name.git No need to give password every time.\nGit Settings with GitHub Silly, but this section is for myself. 🤐\n1 2 3 4 5 ssh-keygen -t rsa -b 4096 -C \"githubMail\" eval \"$(ssh-agent -s)\" ssh-add ~/.ssh/id_rsa vim .ssh/id_rsa.pub # copy the value inside ssh -T git@github.com ","wordCount":"1367","inLanguage":"en","image":"http://localhost:1313/images/cover.png","datePublished":"2022-05-31T00:00:00Z","dateModified":"2022-05-31T00:00:00Z","author":{"@type":"Person","name":"Loknath Dhar"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:1313/posts/all_about_git/"},"publisher":{"@type":"Organization","name":"Loknath's Log","logo":{"@type":"ImageObject","url":"http://localhost:1313/images/favicon.ico"}}}</script></head><body id=top><header class=header><nav class=nav><div class=logo><a href=http://localhost:1313/ accesskey=h title="#loki (Alt + H)"><img src=http://localhost:1313/apple-touch-icon.png alt aria-label=logo height=23>#loki</a><div class=logo-switches></div></div><ul id=menu><li><a href=http://localhost:1313/search/ title="search (Alt + /)" accesskey=/><span>search</span></a></li><li><a href=http://localhost:1313/categories/ title=categories><span>categories</span></a></li><li><a href=http://localhost:1313/tags/ title=tags><span>tags</span></a></li><li><a href=http://localhost:1313/about/ title=about><span>about</span></a></li><li><a href=http://localhost:1313/portfolio/ title=portfolio><span>portfolio</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=http://localhost:1313/>Home</a>&nbsp;»&nbsp;<a href=http://localhost:1313/posts/>Posts</a></div><h1 class="post-title entry-hint-parent">Learning Git</h1><div class=post-meta><span title='2022-05-31 00:00:00 +0000 UTC'>May 31, 2022</span>&nbsp;·&nbsp;Loknath Dhar</div></header><div class=toc><details><summary accesskey=c title="(Alt + C)"><span class=details>Table of Contents</span></summary><div class=inner><nav id=TableOfContents></nav></div></details></div><div class=post-content><p><strong>SCM</strong> : Source Control Management.</p><p><strong>VCS</strong>: Version Control System.</p><blockquote><p>All of the content here is for command line, as I am very comfortable with terminal [<em>and of course Linux</em>].</p></blockquote><p>Basic git syntax: <code>program | action | destination</code>.</p><p><em>For example</em>: <code>git | add | .</code></p><h1 id=configure-git>Configure git<a hidden class=anchor aria-hidden=true href=#configure-git>#</a></h1><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># set your name</span>
+</span></span><span class=line><span class=cl>$ git config user.name <span class=s2>&#34;user-name&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># set your email</span>
+</span></span><span class=line><span class=cl>$ git config user.email <span class=s2>&#34;user-email@example.com&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># set global user name</span>
+</span></span><span class=line><span class=cl>$ git config --global user.name <span class=s2>&#34;username&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># set global user email</span>
+</span></span><span class=line><span class=cl>$ git config --global user.email <span class=s2>&#34;user-email&#34;</span>
+</span></span></code></pre></td></tr></table></div></div><h1 id=basic>Basic<a hidden class=anchor aria-hidden=true href=#basic>#</a></h1><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span><span class=lnt>54
+</span><span class=lnt>55
+</span><span class=lnt>56
+</span><span class=lnt>57
+</span><span class=lnt>58
+</span><span class=lnt>59
+</span><span class=lnt>60
+</span><span class=lnt>61
+</span><span class=lnt>62
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># to check git version</span>
+</span></span><span class=line><span class=cl>$ git --version
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># initializing git repository</span>
+</span></span><span class=line><span class=cl>$ git init
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># check status of the git repo</span>
+</span></span><span class=line><span class=cl>$ git status
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># clone remote repo to your machine</span>
+</span></span><span class=line><span class=cl>$ git clone <span class=o>[</span>url<span class=o>]</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Add all files at once</span>
+</span></span><span class=line><span class=cl>$ git add .
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Add specific files by name</span>
+</span></span><span class=line><span class=cl>$ git add <span class=o>{</span>file-name/path-to-file<span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># commit all the files</span>
+</span></span><span class=line><span class=cl>$ git commit -m <span class=s2>&#34;messages you want to write&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># to correct/amend commit message</span>
+</span></span><span class=line><span class=cl>$ git commit --amend -m <span class=s2>&#34;your message&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># commit with title &amp; description</span>
+</span></span><span class=line><span class=cl>$ git commit -m <span class=s2>&#34;Title&#34;</span> -m <span class=s2>&#34;Description...&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># to view specific commit</span>
+</span></span><span class=line><span class=cl>$ git show <span class=o>{</span>commit-ID<span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># to update every change</span>
+</span></span><span class=line><span class=cl>$ git add -u
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># to remove file</span>
+</span></span><span class=line><span class=cl>$ git rm <span class=o>{</span>file-name<span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># remove file from git staging area</span>
+</span></span><span class=line><span class=cl>$ git rm --cached <span class=o>{</span>file-name<span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># to untrack all files in git-ignore</span>
+</span></span><span class=line><span class=cl>$ git rm -r --cached .
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># restore staged file</span>
+</span></span><span class=line><span class=cl>$ git restored -staged <span class=o>{</span>file-name<span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># configure git to ignore specific file</span>
+</span></span><span class=line><span class=cl>$ <span class=nb>echo</span> <span class=o>{</span>file-name<span class=o>}</span> &gt;&gt; .gitignore
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># to move or rename file</span>
+</span></span><span class=line><span class=cl>$ git mv <span class=o>{</span>old-file-name<span class=o>}</span> <span class=o>{</span>new-file-name<span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>#  to restore file from last commit</span>
+</span></span><span class=line><span class=cl>$ git checkout -- <span class=o>{</span>file-name<span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># to restore all file from last commit</span>
+</span></span><span class=line><span class=cl>$ git checkout -- .
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># to restore file from a commit and move to current branch</span>
+</span></span><span class=line><span class=cl>$ git checkout <span class=o>{</span>commit-ID<span class=o>}</span> -- <span class=o>{</span>file-name<span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># check help menu</span>
+</span></span><span class=line><span class=cl>$ git <span class=nb>help</span> log
+</span></span></code></pre></td></tr></table></div></div><h1 id=update--delete>Update & Delete<a hidden class=anchor aria-hidden=true href=#update--delete>#</a></h1><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># to test delete untracked file</span>
+</span></span><span class=line><span class=cl>$ git clean -n
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># to delete untracked file</span>
+</span></span><span class=line><span class=cl>$ git clean -f
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># to unstage / undo adds</span>
+</span></span><span class=line><span class=cl>$ git reset HEAD <span class=o>{</span>file-name<span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><h1 id=git-log>Git Log<a hidden class=anchor aria-hidden=true href=#git-log>#</a></h1><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># list of git log</span>
+</span></span><span class=line><span class=cl>$ git log
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># view logs in oneline (awesome!)</span>
+</span></span><span class=line><span class=cl>$ git log --oneline
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># list of changed files</span>
+</span></span><span class=line><span class=cl>$ git log --name-only
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># to view commit log in one line with full SHA-1 format</span>
+</span></span><span class=line><span class=cl>$ git log --format<span class=o>=</span>oneline
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># to view changes</span>
+</span></span><span class=line><span class=cl>$ git log -p
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># to view commits of a specific file</span>
+</span></span><span class=line><span class=cl>$ git log <span class=o>{</span>file-name<span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># to view all commits of a specific file</span>
+</span></span><span class=line><span class=cl>$ git log -p <span class=o>{</span>file-name<span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># to view status &amp; summary of commits</span>
+</span></span><span class=line><span class=cl>$ git log --stat
+</span></span><span class=line><span class=cl>$ git log --stat --summary
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># to view commit history in graph</span>
+</span></span><span class=line><span class=cl>$ git log --graph
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># to view summary of commit history in graph</span>
+</span></span><span class=line><span class=cl>$ git log --oneline --graph --all --decorate
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># view previous commit history</span>
+</span></span><span class=line><span class=cl>$ git log --graph --decorate
+</span></span></code></pre></td></tr></table></div></div><h1 id=git-branch>Git Branch<a hidden class=anchor aria-hidden=true href=#git-branch>#</a></h1><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># create a new branch</span>
+</span></span><span class=line><span class=cl>$ git branch <span class=o>{</span>branch-name<span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># switch to an existing branch</span>
+</span></span><span class=line><span class=cl>$ git checkout <span class=o>{</span>branch-name<span class=o>}</span>
+</span></span><span class=line><span class=cl>$ git switch <span class=o>{</span>branch-name<span class=o>}</span>    <span class=c1># new</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># create a new branch and swithc to it</span>
+</span></span><span class=line><span class=cl>$ git checkout -b <span class=o>{</span>branch-name<span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># rename branch</span>
+</span></span><span class=line><span class=cl>$ git branch -m <span class=o>{</span>branch-name<span class=o>}</span> <span class=o>{</span>new-branch-name<span class=o>}</span>
+</span></span><span class=line><span class=cl>$ git branch --move <span class=o>{</span>old-branch-name<span class=o>}</span> <span class=o>{</span>new-branch-name<span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># to show all branches that are merged into current branch</span>
+</span></span><span class=line><span class=cl>$ git branch --merged
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># delete a branch</span>
+</span></span><span class=line><span class=cl>$ git branch -d <span class=o>{</span>branch-name<span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># list all branches</span>
+</span></span><span class=line><span class=cl>$ git branch
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># view all branches - local &amp; remote</span>
+</span></span><span class=line><span class=cl>$ git branch -a
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># to remove remote branch</span>
+</span></span><span class=line><span class=cl>$ git push --delete origin <span class=o>{</span>branch-name<span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># to delete unmerged branch</span>
+</span></span><span class=line><span class=cl>$ git branch -D <span class=o>{</span>branch-name-to-delete<span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><blockquote><p><strong>HEAD</strong> is where we right now in the repository. The <strong>HEAD</strong> points to the last commit in the branch we are currently on.</p></blockquote><h1 id=git-merge>Git Merge<a hidden class=anchor aria-hidden=true href=#git-merge>#</a></h1><p>There are two types of merging:</p><ol><li><p><strong>Fast-forward-merge</strong>: It happens when current branch has no extra commits compared to the branch we&rsquo;re merging.</p></li><li><p><strong>No-fast-forward-merge</strong>: If the master branch has new changes which other branch doesn&rsquo;t have, git will commit no-fast-forward merge.</p></li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># first checkout to master branch</span>
+</span></span><span class=line><span class=cl>$ git checkout master
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># merging</span>
+</span></span><span class=line><span class=cl>$ git merge <span class=o>{</span>branch-name<span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># to merge on master branch (only if fast forward)</span>
+</span></span><span class=line><span class=cl>$ git merge --ff-only <span class=o>{</span>branch-name<span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># merging on master branch (forcing a new commit)</span>
+</span></span><span class=line><span class=cl>$ git merge --no-ff <span class=o>{</span>branch-name<span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># to stop merge (in case of conflicts)</span>
+</span></span><span class=line><span class=cl>$ git merge --abort
+</span></span><span class=line><span class=cl>$ git reset --merge        <span class=c1># prior to v1.7.4</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># to undo local merge</span>
+</span></span><span class=line><span class=cl>$ git reset  --hard <span class=o>{</span>branch-name<span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># to merge a specific commit</span>
+</span></span><span class=line><span class=cl>$ git cherry-pick <span class=o>{</span>commit-ID<span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># rebase</span>
+</span></span><span class=line><span class=cl>$ git checkout <span class=o>{</span>branch-name<span class=o>}</span> &gt;&gt; git rebase main
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># to cancel rebase</span>
+</span></span><span class=line><span class=cl>$ git rebase --abort
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Squash multiple commit to one commit</span>
+</span></span><span class=line><span class=cl>$ git rebase -i HEAD~3
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># to squash merge in one commit</span>
+</span></span><span class=line><span class=cl>$ git merge --squash <span class=o>{</span>branch-name<span class=o>}</span>  <span class=c1># (and commit afterwards)</span>
+</span></span></code></pre></td></tr></table></div></div><h1 id=git-stash>Git Stash<a hidden class=anchor aria-hidden=true href=#git-stash>#</a></h1><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># save into stash</span>
+</span></span><span class=line><span class=cl>$ git stash save <span class=s2>&#34;message&#34;</span>
+</span></span><span class=line><span class=cl>$ git stash
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># show list of the stash</span>
+</span></span><span class=line><span class=cl>$ git stash list
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># view all stash</span>
+</span></span><span class=line><span class=cl>$ git stash show
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># show status of a specific stash</span>
+</span></span><span class=line><span class=cl>$ git stash show <span class=o>{</span>stash-ID<span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># show changes on stash</span>
+</span></span><span class=line><span class=cl>$ git stash show -p <span class=o>{</span>stash-ID<span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># to bring all stash</span>
+</span></span><span class=line><span class=cl>$ git stash pop
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># bring/get back to specific stash</span>
+</span></span><span class=line><span class=cl>$ git stash pop <span class=o>{</span>stash-ID<span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># to use specific stash without dropping</span>
+</span></span><span class=line><span class=cl>$ git stash apply <span class=o>{</span>stash-ID<span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># use custom stash and index</span>
+</span></span><span class=line><span class=cl>$ git stash apply --index
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># create new branch from stash</span>
+</span></span><span class=line><span class=cl>$ git stash branch <span class=o>{</span>new-branch<span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># to delete 1st item of stash list</span>
+</span></span><span class=line><span class=cl>$ git stash drop
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># to delete specific stash from stash list</span>
+</span></span><span class=line><span class=cl>$ git stash drop <span class=o>{</span>stash-ID<span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># to delete the whole stash</span>
+</span></span><span class=line><span class=cl>$ git stash clear
+</span></span></code></pre></td></tr></table></div></div><h1 id=reflog>Reflog<a hidden class=anchor aria-hidden=true href=#reflog>#</a></h1><blockquote><p>I have nothing to say about this section. Ultimate weapon</p></blockquote><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>git reflog
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>git reset --hard <span class=o>{</span>ssh-link<span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><h1 id=git-compare>Git Compare<a hidden class=anchor aria-hidden=true href=#git-compare>#</a></h1><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># show difference</span>
+</span></span><span class=line><span class=cl>$ git diff <span class=o>{</span>commit-ID<span class=o>}</span> <span class=o>{</span>commit-ID<span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># compare modified files and highlight changes</span>
+</span></span><span class=line><span class=cl>$ git diff --color-words <span class=o>{</span>file-name<span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># view the difference between last commit and staged version</span>
+</span></span><span class=line><span class=cl>$ git diff --staged
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># to compare branches</span>
+</span></span><span class=line><span class=cl>$ git diff main..<span class=o>{</span>branch-name<span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><h1 id=working-with-remote-repository>Working with remote repository<a hidden class=anchor aria-hidden=true href=#working-with-remote-repository>#</a></h1><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># initilizing remote repository</span>
+</span></span><span class=line><span class=cl>$ git remote add origin <span class=o>{</span>connection-string.git<span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># list remote repository</span>
+</span></span><span class=line><span class=cl>$ git remote -v
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># pushing repository</span>
+</span></span><span class=line><span class=cl>$ git push origin master/main
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># clone repo</span>
+</span></span><span class=line><span class=cl>$ git clone <span class=o>{</span>ssh-link<span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># update the repo</span>
+</span></span><span class=line><span class=cl>$ git fetch origin master
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># fetch &amp; merge remote changes</span>
+</span></span><span class=line><span class=cl>$ git pull origin master
+</span></span></code></pre></td></tr></table></div></div><h1 id=using-ssh>Using SSH<a hidden class=anchor aria-hidden=true href=#using-ssh>#</a></h1><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>git remote -v
+</span></span><span class=line><span class=cl>git remote set-url origin git@github.com:username/repo-name.git
+</span></span></code></pre></td></tr></table></div></div><p>No need to give password every time.</p><h1 id=git-settings-with-github>Git Settings with GitHub<a hidden class=anchor aria-hidden=true href=#git-settings-with-github>#</a></h1><p>Silly, but this section is for myself. 🤐</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>ssh-keygen -t rsa -b <span class=m>4096</span> -C <span class=s2>&#34;githubMail&#34;</span>
+</span></span><span class=line><span class=cl><span class=nb>eval</span> <span class=s2>&#34;</span><span class=k>$(</span>ssh-agent -s<span class=k>)</span><span class=s2>&#34;</span>
+</span></span><span class=line><span class=cl>ssh-add ~/.ssh/id_rsa
+</span></span><span class=line><span class=cl>vim .ssh/id_rsa.pub    <span class=c1># copy the value inside</span>
+</span></span><span class=line><span class=cl>ssh -T git@github.com
+</span></span></code></pre></td></tr></table></div></div></div><footer class=post-footer><ul class=post-tags><li><a href=http://localhost:1313/tags/cheatsheet/>Cheatsheet</a></li><li><a href=http://localhost:1313/tags/resources/>Resources</a></li></ul><nav class=paginav><a class=prev href=http://localhost:1313/posts/set-up-solrcloud-for-production/><span class=title>« Prev</span><br><span>Setting Up SolrCloud for Production</span>
+</a><a class=next href=http://localhost:1313/posts/custom-badges-github-profile/><span class=title>Next »</span><br><span>Making custom badges using shields.io</span></a></nav></footer></article></main><footer class=footer><span>&copy; 2025 <a href=http://localhost:1313/>Loknath Dhar</a></span> ·</footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

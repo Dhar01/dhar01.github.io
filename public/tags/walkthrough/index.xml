@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Walkthrough on Loknath&#39;s Log</title>
+    <link>http://localhost:1313/tags/walkthrough/</link>
+    <description>Recent content in Walkthrough on Loknath&#39;s Log</description>
+    <image>
+      <title>Loknath&#39;s Log</title>
+      <url>http://localhost:1313/images/cover.png</url>
+      <link>http://localhost:1313/images/cover.png</link>
+    </image>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 25 Feb 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/walkthrough/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Google Dorking (finding information) - OSINT</title>
+      <link>http://localhost:1313/posts/google-fu/</link>
+      <pubDate>Fri, 25 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/google-fu/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Everyone should learn how to search.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;(&lt;em&gt;This post contains some google dorking techniques for finding information on the internet. Google is your friend.&lt;/em&gt;)&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;searching&#34;&gt;Searching&lt;/h2&gt;
+&lt;p&gt;Narrow down search query, use &lt;strong&gt;&amp;quot;_something_&amp;quot;&lt;/strong&gt;.&lt;!-- raw HTML omitted --&gt;
+Ex: &lt;code&gt;&amp;quot;Liverpool&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;For exact topic and site:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;site: website-name topic-name
+
+site: geekforgeeks sql
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;some-terms&#34;&gt;Some terms&lt;/h2&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;&lt;strong&gt;Term&lt;/strong&gt;&lt;/th&gt;
+          &lt;th&gt;&lt;strong&gt;Action&lt;/strong&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;code&gt;filetype:&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;search for a file by its extension&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;code&gt;cache:&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;view &lt;!-- raw HTML omitted --&gt;google&amp;rsquo;s cached version&lt;!-- raw HTML omitted --&gt; of a specified URL&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;code&gt;intitle:&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;the specified phrase &lt;em&gt;MUST&lt;/em&gt; appear in the title of the page&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;code&gt;allintext:&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;searches specific text contained on any web page&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;code&gt;allintitle:&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;show pages that contain titles with X characters&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;code&gt;allinurl:&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;used to fetch results whose URL contains all the specified characters&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;code&gt;inurl:&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;useful for single keyword, same as &lt;code&gt;allinurl&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;code&gt;intitle:&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;used to search for various keywords inside the title&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;code&gt;inanchor:&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;useful when need to search for an exact anchor text used on any links.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;code&gt;intext:&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;useful to locate pages that contain characters or strings inside their text&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;code&gt;site:&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;show the full list of all indexed URLs for the specified domain or sub-domain&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;code&gt;*&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;wildcard used to search pages that contain &lt;em&gt;anything&lt;/em&gt; before your word&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;|&lt;/td&gt;
+          &lt;td&gt;logical operator, will show all the sites which contain both words&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;code&gt;+&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;used to concatenate words, useful to detect pages that use more than specific key&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;code&gt;-&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;used to avoiding showing results that contain certain words&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;For example, searching for movies in online servers:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Web Fundamentals walk-through [TryHackMe]</title>
+      <link>http://localhost:1313/posts/web-fundamentals-walkthrough/</link>
+      <pubDate>Sat, 10 Oct 2020 01:34:53 +0600</pubDate>
+      <guid>http://localhost:1313/posts/web-fundamentals-walkthrough/</guid>
+      <description>&lt;h1 id=&#34;task-2&#34;&gt;Task 2&lt;/h1&gt;
+&lt;p&gt;A &lt;strong&gt;DNS request&lt;/strong&gt; is made. When browser knows the server&amp;rsquo;s IP address, it ask the server for the web page which is done with a &lt;strong&gt;HTTP GET&lt;/strong&gt; request.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;GET&lt;/strong&gt; is an example of a HTTP verb, which are the different types of request. The server responds to the GET request with the web page content. IF the web page is loading extra resources, like &lt;em&gt;JavaScript&lt;/em&gt;, &lt;em&gt;images&lt;/em&gt;, or &lt;em&gt;CSS&lt;/em&gt; files, those will be retrieved in &lt;!-- raw HTML omitted --&gt;separate GET requests.&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Shodan.io Walk-through [Tryhackme]</title>
+      <link>http://localhost:1313/posts/shodan-walkthrough/</link>
+      <pubDate>Fri, 09 Oct 2020 01:34:53 +0600</pubDate>
+      <guid>http://localhost:1313/posts/shodan-walkthrough/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.shodan.io/&#34;&gt;Shodan.io &lt;/a&gt;is a search engine for the internet of things. There is a room about Shodan in Tryhackme and this walk-through is about that.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Due to the nature of Shodan and its scanning services, the answer is changing all the time. So keep trying.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h1 id=&#34;task-01&#34;&gt;Task 01&lt;/h1&gt;
+&lt;p&gt;An autonomous system number (ASN) is a global identifier of a range of IP addresses. Basically, large companies like Google, Microsoft have their own ASN for all of the IP addresses they own.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
