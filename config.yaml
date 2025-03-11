@@ -60,7 +60,7 @@ params:
   profileMode:
     enabled: true
     title: Loknath's Log
-    subtitle: "Logs of a Gopher living in the Linux shell, Go!"
+    subtitle: "..logs of a Gopher living in the Linux shell.."
     imageUrl: "/images/profile.jpg"
     imageWidth: 120
     imageHeight: 120
@@ -112,25 +112,20 @@ menu:
 
   main:
 
-    - identifier: search
-      name: search
-      url: /search/
-      weight: 1
-
     - identifier: tags
       name: tags
       url: /tags/
-      weight: 2
+      weight: 1
 
     - identifier: about
       name: about
       url: /about/
-      weight: 3
+      weight: 2
 
     - identifier: portfolio
       name: portfolio
       url: /portfolio/
-      weight: 4
+      weight: 3
 
 # pygmentsUseClasses: true
 
