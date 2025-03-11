@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>TIL on Loknath&#39;s Log</title>
-    <link>https://dhar01.github.io/tags/til/</link>
+    <link>http://localhost:1313/tags/til/</link>
     <description>Recent content in TIL on Loknath&#39;s Log</description>
     <image>
       <title>Loknath&#39;s Log</title>
-      <url>https://dhar01.github.io/images/cover.png</url>
-      <link>https://dhar01.github.io/images/cover.png</link>
+      <url>http://localhost:1313/images/cover.png</url>
+      <link>http://localhost:1313/images/cover.png</link>
     </image>
     <generator>Hugo -- 0.145.0</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 10 May 2023 11:30:03 +0600</lastBuildDate>
-    <atom:link href="https://dhar01.github.io/tags/til/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/til/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>TIL: logrotate!</title>
-      <link>https://dhar01.github.io/posts/all_about_logrotate/</link>
+      <link>http://localhost:1313/posts/all_about_logrotate/</link>
       <pubDate>Wed, 10 May 2023 11:30:03 +0600</pubDate>
-      <guid>https://dhar01.github.io/posts/all_about_logrotate/</guid>
+      <guid>http://localhost:1313/posts/all_about_logrotate/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Logrotate&lt;/strong&gt; is a system utility that manages the automatic rotation and compression of log files.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -38,9 +38,9 @@
     </item>
     <item>
       <title>TIL: journalctl!</title>
-      <link>https://dhar01.github.io/posts/all-about-journalctl/</link>
+      <link>http://localhost:1313/posts/all-about-journalctl/</link>
       <pubDate>Sun, 30 Apr 2023 11:30:03 +0600</pubDate>
-      <guid>https://dhar01.github.io/posts/all-about-journalctl/</guid>
+      <guid>http://localhost:1313/posts/all-about-journalctl/</guid>
       <description>&lt;p&gt;&lt;code&gt;jounralctl&lt;/code&gt; is the command line tool that let us interact with the journal logs. Default location of &lt;code&gt;journald&lt;/code&gt; logs is &lt;code&gt;/var/log/journal&lt;/code&gt; directory.&lt;/p&gt;
 &lt;p&gt;Type &lt;code&gt;journalctl&lt;/code&gt; in the terminal, it will show the journal logs in chronological order.&lt;/p&gt;
 &lt;ul&gt;
@@ -55,9 +55,9 @@
     </item>
     <item>
       <title>TIL: systemctl!</title>
-      <link>https://dhar01.github.io/posts/all_about_systemctl/</link>
+      <link>http://localhost:1313/posts/all_about_systemctl/</link>
       <pubDate>Mon, 20 Mar 2023 11:30:03 +0600</pubDate>
-      <guid>https://dhar01.github.io/posts/all_about_systemctl/</guid>
+      <guid>http://localhost:1313/posts/all_about_systemctl/</guid>
       <description>&lt;h1 id=&#34;service-management&#34;&gt;Service management&lt;/h1&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -143,9 +143,9 @@
     </item>
     <item>
       <title>TIL: man pages!</title>
-      <link>https://dhar01.github.io/posts/all_about_man-pages/</link>
+      <link>http://localhost:1313/posts/all_about_man-pages/</link>
       <pubDate>Thu, 13 Oct 2022 11:30:03 +0600</pubDate>
-      <guid>https://dhar01.github.io/posts/all_about_man-pages/</guid>
+      <guid>http://localhost:1313/posts/all_about_man-pages/</guid>
       <description>&lt;p&gt;&lt;code&gt;man&lt;/code&gt; - display a program&amp;rsquo;s manual page.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;

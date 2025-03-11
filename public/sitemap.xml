@@ -2,52 +2,52 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://dhar01.github.io/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2023-05-10T11:30:03+06:00</lastmod>
   </url><url>
-    <loc>https://dhar01.github.io/posts/</loc>
+    <loc>http://localhost:1313/posts/</loc>
     <lastmod>2023-05-10T11:30:03+06:00</lastmod>
   </url><url>
-    <loc>https://dhar01.github.io/tags/</loc>
+    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2023-05-10T11:30:03+06:00</lastmod>
   </url><url>
-    <loc>https://dhar01.github.io/tags/til/</loc>
+    <loc>http://localhost:1313/tags/til/</loc>
     <lastmod>2023-05-10T11:30:03+06:00</lastmod>
   </url><url>
-    <loc>https://dhar01.github.io/posts/all_about_logrotate/</loc>
+    <loc>http://localhost:1313/posts/all_about_logrotate/</loc>
     <lastmod>2023-05-10T11:30:03+06:00</lastmod>
   </url><url>
-    <loc>https://dhar01.github.io/posts/all-about-journalctl/</loc>
+    <loc>http://localhost:1313/posts/all-about-journalctl/</loc>
     <lastmod>2023-04-30T11:30:03+06:00</lastmod>
   </url><url>
-    <loc>https://dhar01.github.io/posts/all_about_systemctl/</loc>
+    <loc>http://localhost:1313/posts/all_about_systemctl/</loc>
     <lastmod>2023-03-20T11:30:03+06:00</lastmod>
   </url><url>
-    <loc>https://dhar01.github.io/tags/how-to/</loc>
+    <loc>http://localhost:1313/tags/how-to/</loc>
     <lastmod>2023-03-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://dhar01.github.io/posts/set-up-ssl-for-solrcloud/</loc>
+    <loc>http://localhost:1313/posts/set-up-ssl-for-solrcloud/</loc>
     <lastmod>2023-03-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://dhar01.github.io/posts/all_about_man-pages/</loc>
+    <loc>http://localhost:1313/posts/all_about_man-pages/</loc>
     <lastmod>2022-10-13T11:30:03+06:00</lastmod>
   </url><url>
-    <loc>https://dhar01.github.io/posts/set-up-solrcloud-for-production/</loc>
+    <loc>http://localhost:1313/posts/set-up-solrcloud-for-production/</loc>
     <lastmod>2022-07-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://dhar01.github.io/posts/custom-badges-github-profile/</loc>
+    <loc>http://localhost:1313/posts/custom-badges-github-profile/</loc>
     <lastmod>2022-03-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://dhar01.github.io/about/</loc>
+    <loc>http://localhost:1313/about/</loc>
     <lastmod>2022-02-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://dhar01.github.io/posts/codeblocks-with-freeglut-linux/</loc>
+    <loc>http://localhost:1313/posts/codeblocks-with-freeglut-linux/</loc>
     <lastmod>2021-02-06T01:34:53+06:00</lastmod>
   </url><url>
-    <loc>https://dhar01.github.io/archives/</loc>
+    <loc>http://localhost:1313/archives/</loc>
   </url><url>
-    <loc>https://dhar01.github.io/categories/</loc>
+    <loc>http://localhost:1313/categories/</loc>
   </url><url>
-    <loc>https://dhar01.github.io/search/</loc>
+    <loc>http://localhost:1313/search/</loc>
   </url>
 </urlset>
