@@ -1,13 +1,15 @@
 ---
 title: "👨‍💻 The mind behind.."
-date: 2022-02-19T11:30:03+00:00
-showToc: true
+layout: post
+date: 2022-02-19
+ShowBreadCrumbs: false
+showToc: false
+hideMeta: true
 TocOpen: false
 draft: false
 ---
-# 👋 Hey, I'm Loknath Dhar
 
-A backend developer passionate about writing codes for humans and machines, building efficient, scalable systems. With a background in DevOps and living in the home with Linux, I love optimizing infrastructure and backend performance.
+I'm Loknath Dhar, a backend developer passionate about writing codes for humans and machines, building efficient, scalable systems. With a background in DevOps and living in the home with Linux, I love optimizing infrastructure and backend performance.
 
 I enjoy exploring system design, databases, and API design.
 
