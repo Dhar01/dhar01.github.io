@@ -122,11 +122,6 @@ menu:
       url: /about/
       weight: 2
 
-    - identifier: portfolio
-      name: portfolio
-      url: /portfolio/
-      weight: 3
-
 # pygmentsUseClasses: true
 
 markup:

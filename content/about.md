@@ -1,5 +1,5 @@
 ---
-title: "👨‍💻 The man or the mind behind.."
+title: "👨‍💻 The mind behind.."
 date: 2022-02-19T11:30:03+00:00
 showToc: true
 TocOpen: false
