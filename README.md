@@ -1,6 +1,6 @@
-Just another personal blog..
+Logs of a Gopher living in the Linux shell...
 
-[Loknath's Space](https://dhar01.github.io/)
+[Loknath's Log](https://dhar01.github.io/)
 
 
 # About Blog
@@ -9,5 +9,4 @@ Just another personal blog..
 - Theme of the website: [hugo-PaperMod](https://github.com/adityatelange/hugo-PaperMod)
 - Host: [GitHub](https://github.com/Dhar01/dhar01.github.io)
 - Blog is deployed with GitHub Pages.
-- For photos: [Unsplash](https://unsplash.com/), [Pexels](https://www.pexels.com/)
 - For icons: [Simple Icons](https://simpleicons.org/)
