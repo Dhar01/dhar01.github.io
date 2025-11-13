@@ -1,6 +1,6 @@
 ---
 title: "TIL #2: The layered architecture approach in Go projects"
-date: 2025-11-14T11:30:03+06:00
+date: 2025-11-13T11:30:03+06:00
 showToc: true
 TocOpen: false
 draft: false
