@@ -1,6 +1,6 @@
 baseURL: https://dhar01.github.io/
 languageCode: en-us
-title: Loknath's Log
+title: Gopher's Log
 pluralizelisttitles: false
 theme: PaperMod
 
@@ -15,10 +15,10 @@ minify:
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
-  title: Loknath's Log
+  title: Gopher's Log
   description: "logs of a Gopher"
   keywords: [Blog, Portfolio]
-  author: Loknath Dhar
+  author: The typist
   images: ["/images/cover.png"]
   DateFormat: "January 2, 2006"
   defaultTheme: light # dark, light
@@ -51,7 +51,7 @@ params:
     safari_pinned_tab: "<link / abs url>"
 
   label:
-    text: "#loki"
+    text: "#typist"
     icon: /apple-touch-icon.png
     iconHeight: 23
     iconWidth: 23
@@ -59,7 +59,7 @@ params:
   # profile-mode
   profileMode:
     enabled: true
-    title: Loknath's Log
+    title: Gopher's Log
     subtitle: "..logs of a Gopher living in the Linux shell.."
     imageUrl: "/images/profile.jpg"
     imageWidth: 120
